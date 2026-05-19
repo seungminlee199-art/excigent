@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>News &amp; Insights — Broadband, ICT &amp; Security Intelligence | Excigent Tech Partners</title>
+<meta name="description" content="Industry articles, videos, and market intelligence from Excigent Tech Partners — covering Broadband, ICT, and Security convergence across the Americas." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://excigent.com/news.html" />
+<meta property="og:title" content="News &amp; Insights — Excigent Tech Partners" />
+<meta property="og:description" content="Trade articles, videos, and market intelligence on Broadband, ICT, and Security convergence from the Excigent team." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://excigent.com/news.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="css/style.css" />
+<style>
+/* News filter tabs */
+.news-filters { display: flex; gap: 0.6rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.news-filter {
+  font-family: inherit; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.48rem 1.1rem;
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 30px; cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.news-filter:hover, .news-filter.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+/* Featured article (full width) */
+.news-featured {
+  display: grid; grid-template-columns: 1.4fr 1fr; border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(15,64,90,0.10); margin-bottom: 1.5rem; cursor: pointer;
+  transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.4s ease;
+  background: #fff;
+}
+.news-featured:hover { transform: translateY(-4px); border-color: rgba(18,96,167,0.25); box-shadow: 0 22px 56px -28px rgba(15,64,90,0.30); }
+.featured-thumb { position: relative; min-height: 360px; background: linear-gradient(135deg, #061F2E 0%, #0F405A 50%, #1260A7 100%); overflow: hidden; }
+.featured-thumb::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.6; }
+.featured-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 60%, rgba(255,255,255,0.04) 100%); }
+.featured-label { position: absolute; top: 1.5rem; left: 1.5rem; z-index: 2; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; padding: 0.35rem 0.85rem; background: rgba(18,96,167,0.75); backdrop-filter: blur(8px); border-radius: 30px; }
+.featured-body { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+.featured-body .news-date { margin-bottom: 0.7rem; }
+.featured-body h2 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 600; line-height: 1.35; color: var(--navy); margin-bottom: 1rem; transition: color 0.25s ease; }
+.news-featured:hover .featured-body h2 { color: var(--blue); }
+.featured-body p { font-size: 0.95rem; line-height: 1.7; color: var(--muted); margin-bottom: 1.5rem; }
+.read-more { font-size: 0.82rem; font-weight: 600; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; border-bottom: 1.5px solid transparent; transition: border-color 0.25s ease; }
+.read-more:hover { border-color: var(--blue); }
+
+/* Regular news grid */
+.news-grid-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+
+/* Video card special style */
+.news-card.video .news-thumb { position: relative; }
+.video-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.92); box-shadow: 0 10px 30px -8px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.3s ease; }
+.news-card.video:hover .video-overlay { transform: translate(-50%,-50%) scale(1.12); background: #fff; }
+.video-play { width: 0; height: 0; border-left: 14px solid var(--navy); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 3px; }
+
+/* Newsletter section */
+.newsletter-section { background: #F4F7FB; padding: 5rem 2rem; }
+.newsletter-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.newsletter-copy h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 300; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+.newsletter-copy h2 strong { font-weight: 700; }
+.newsletter-copy p { font-size: 0.98rem; line-height: 1.7; color: var(--muted); }
+
+@media (max-width: 980px) {
+  .news-featured { grid-template-columns: 1fr; }
+  .featured-thumb { min-height: 240px; }
+  .news-grid-inner { grid-template-columns: 1fr; }
+  .newsletter-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="Logo/Excigent Logo.svg" alt="Excigent Tech Partners" /></a></div>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="expertise.html">Expertise</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="news.html">News</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-phone">+1 (800) 000-0000</span>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow">Intelligence &amp; Insights</span>
+    <h1>Industry <strong>perspectives</strong>,<br>delivered from the inside.</h1>
+    <p>Articles, videos, and market intelligence from the Excigent team — signals worth tracking in Broadband, ICT, and Security convergence.</p>
+  </div>
+</header>
+
+<!-- ARTICLES & VIDEOS -->
+<section class="section light">
+  <div class="section-inner">
+
+    <div class="news-filters reveal" style="--d:0s">
+      <button class="news-filter active" data-filter="all">All</button>
+      <button class="news-filter" data-filter="article">Articles</button>
+      <button class="news-filter" data-filter="video">Videos</button>
+      <button class="news-filter" data-filter="newsletter">Newsletters</button>
+      <button class="news-filter" data-filter="market-update">Market Updates</button>
+    </div>
+
+    <!-- FEATURED -->
+    <div class="news-featured reveal" data-category="article" style="--d:0.06s">
+      <div class="featured-thumb">
+        <span class="featured-label">Featured Article</span>
+      </div>
+      <div class="featured-body">
+        <div class="news-date">May 12, 2026 · 6 min read</div>
+        <h2>Why broadband, ICT &amp; security convergence is rewriting the infrastructure playbook</h2>
+        <p>The future of infrastructure isn't three silos — it's an integrated system. Here's what principals need to understand about positioning solutions in a converged market, and where the channel opportunities are emerging fastest.</p>
+        <a href="#" class="read-more">Read the full article →</a>
+      </div>
+    </div>
+
+    <!-- NEWS GRID -->
+    <div class="news-grid-inner">
+
+      <article class="news-card video reveal" data-category="video" style="--d:0.05s">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0F405A, #1260A7 70%);">
+          <span class="news-tag">Video</span>
+          <div class="video-overlay"><div class="video-play"></div></div>
+        </div>
+        <div class="news-body">
+          <div class="news-date">April 28, 2026 · 4 min watch</div>
+          <h3>Inside our market model: from assessment to revenue growth</h3>
+          <p>Walk through the six-stage commercial framework Excigent uses with every principal we represent.</p>
+        </div>
+      </article>
+
+      <article class="news-card reveal" data-category="article" style="--d:0.10s">
+        <div class="news-thumb"></div>
+        <div class="news-body">
+          <div class="news-date">April 15, 2026 · 3 min read</div>
+          <h3>Latin America &amp; Caribbean: where channel relationships still win deals</h3>
+          <p>Notes from the field on what really moves the needle for principals expanding into the region.</p>
+        </div>
+      </article>
+
+      <article class="news-card reveal" data-category="newsletter" style="--d:0.15s">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0A2F45, #2363A0 70%);">
+          <span class="news-tag">Newsletter</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">March 30, 2026 · 5 min read</div>
+          <h3>Q1 Market Signal: Structured cabling demand up as enterprise builds accelerate</h3>
+          <p>Quarterly observations from the ICT channel — which product categories are seeing momentum and why.</p>
+        </div>
+      </article>
+
+      <article class="news-card video reveal" data-category="video" style="--d:0.20s">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #061F2E, #0F405A 70%);">
+          <span class="news-tag">Video</span>
+          <div class="video-overlay"><div class="video-play"></div></div>
+        </div>
+        <div class="news-body">
+          <div class="news-date">March 12, 2026 · 7 min watch</div>
+          <h3>FTTH deployment trends in 2026: what ISPs need from their supply chain</h3>
+          <p>Robert Lopez breaks down the infrastructure patterns driving broadband buildouts this year.</p>
+        </div>
+      </article>
+
+      <article class="news-card reveal" data-category="market-update" style="--d:0.25s">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0F405A, #3B6998 70%);">
+          <span class="news-tag">Market Update</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">February 20, 2026 · 4 min read</div>
+          <h3>Security convergence: why access control and video are selling together</h3>
+          <p>The integrated security trend is reshaping how integrators specify and purchase — what principals need to know.</p>
+        </div>
+      </article>
+
+      <article class="news-card reveal" data-category="article" style="--d:0.30s">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #1260A7, #0F405A 70%);">
+          <span class="news-tag">Article</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">January 28, 2026 · 4 min read</div>
+          <h3>The case for Optical LAN: why POL is gaining traction in enterprise ICT</h3>
+          <p>Paul Weintraub explains why passive optical LAN is moving from niche to mainstream in 2026 enterprise builds.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER SECTION -->
+<section class="newsletter-section">
+  <div class="newsletter-inner">
+    <div class="newsletter-copy reveal from-left" style="--d:0s">
+      <span class="section-eyebrow" style="color:var(--blue); margin-bottom:1rem">Stay Informed</span>
+      <h2>Convergence intelligence,<br><strong>straight to your inbox</strong>.</h2>
+      <p>Quarterly insights, trade articles, and market signals from the Excigent team — focused on Broadband, ICT, and Security convergence. No fluff. Just the signals worth tracking.</p>
+    </div>
+    <div class="reveal" style="--d:0.1s">
+      <form class="subscribe-form" style="max-width:100%; border-radius:14px; padding:1rem 1rem 1rem 1.4rem; background:rgba(15,64,90,0.06); border:1px solid rgba(15,64,90,0.14);">
+        <input type="email" placeholder="your.name@company.com" required style="color:var(--navy);" />
+        <button type="submit" style="background:var(--navy); color:#fff;">Subscribe</button>
+      </form>
+      <p style="margin-top:0.75rem; font-size:0.78rem; color:var(--muted);">Quarterly sends. No spam. Unsubscribe any time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><img src="Logo/Excigent Logo.svg" alt="Excigent Tech Partners" /><p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p><div class="footer-contact"><a href="mailto:hello@excigent.com">hello@excigent.com</a><a href="tel:+18000000000">+1 (800) 000-0000</a></div></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="about.html#why">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Markets</h4><ul><li><a href="expertise.html#broadband">Broadband</a></li><li><a href="expertise.html#ict">ICT</a></li><li><a href="expertise.html#security">Security</a></li><li><a href="about.html#network">Our Regions</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#channel">Channel Development</a></li><li><a href="services.html#positioning">Market Positioning</a></li><li><a href="services.html#marketing">Marketing &amp; Visibility</a></li><li><a href="services.html#process">Our Process</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Excigent Tech Partners. All rights reserved.</span>
+    <div class="footer-social">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.49 6S0 4.881 0 3.5 1.11 1 2.49 1s2.49 1.119 2.49 2.5zM.22 8h4.54v14H.22V8zm7.61 0h4.35v1.91h.06c.61-1.15 2.09-2.36 4.31-2.36 4.61 0 5.46 3.03 5.46 6.97V22h-4.54v-6.95c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.81-2.66 3.67V22H7.83V8z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var filters  = document.querySelectorAll('.news-filter');
+  var featured = document.querySelector('.news-featured');
+  var cards    = document.querySelectorAll('.news-card');
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filters.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.dataset.filter;
+
+      if (featured) {
+        featured.style.display = (filter === 'all' || filter === featured.dataset.category) ? '' : 'none';
+      }
+
+      cards.forEach(function (card) {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+      });
+    });
+  });
+}());
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

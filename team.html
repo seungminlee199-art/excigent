@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Leadership Team — Robert Lopez, Paul Weintraub, John Centofanti | Excigent Tech Partners</title>
+<meta name="description" content="Meet the Excigent Tech Partners leadership team: Robert Lopez (Broadband Engineering), Paul Weintraub RCDD (Digital Infrastructure), and John Centofanti (Security Industry) — 80+ combined years of expertise." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://excigent.com/team.html" />
+<meta property="og:title" content="Leadership Team — Excigent Tech Partners" />
+<meta property="og:description" content="Three industry veterans with 80+ combined years in Broadband, ICT, and Security markets across the Americas." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://excigent.com/team.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="css/style.css" />
+<style>
+/* Full-page team profiles */
+.team-profile {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 5rem;
+  align-items: start;
+  padding: 6rem 0;
+  border-bottom: 1px solid rgba(15,64,90,0.08);
+}
+.team-profile:last-child { border-bottom: none; }
+.team-profile.flip { grid-template-columns: 1fr 380px; }
+.team-profile.flip .profile-photo { order: 2; }
+.team-profile.flip .profile-info  { order: 1; }
+
+.profile-photo {
+  position: sticky;
+  top: 88px;
+}
+.profile-photo-wrap {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #DCE7F2 0%, #F4F7FB 100%);
+  box-shadow: 0 24px 64px -24px rgba(15,64,90,0.30);
+}
+.profile-photo-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1), filter 0.4s ease;
+  filter: saturate(0.92);
+}
+.profile-photo-wrap:hover img { transform: scale(1.03); filter: saturate(1); }
+.profile-photo-wrap::after {
+  content: '';
+  position: absolute; inset: auto 0 0 0; height: 40%;
+  background: linear-gradient(180deg, transparent, rgba(15,64,90,0.14));
+  pointer-events: none;
+}
+
+.profile-info { padding-top: 0.5rem; }
+.profile-info .profile-eyebrow {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.26em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.profile-info .profile-eyebrow::before { content: ''; width: 24px; height: 1.5px; background: var(--blue); }
+.profile-info h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 0.5rem; }
+.profile-creds-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.profile-cred { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); padding: 0.28rem 0.75rem; border: 1px solid rgba(18,96,167,0.22); border-radius: 20px; background: rgba(18,96,167,0.04); }
+
+.profile-bio { font-size: 1.02rem; line-height: 1.80; color: var(--muted); margin-bottom: 2rem; }
+.profile-highlights { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.4rem; }
+.profile-highlights li { display: flex; align-items: flex-start; gap: 0.85rem; font-size: 0.95rem; color: var(--navy); line-height: 1.5; }
+.profile-highlights li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 0.45rem; }
+
+.profile-stat-row { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.profile-stat-val { font-size: 2.2rem; font-weight: 200; letter-spacing: -0.04em; color: var(--navy); line-height: 1; }
+.profile-stat-val sup { font-size: 0.55em; font-weight: 400; vertical-align: super; color: var(--blue); }
+.profile-stat-lbl { font-size: 0.74rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; }
+
+@media (max-width: 980px) {
+  .team-profile, .team-profile.flip { grid-template-columns: 1fr; gap: 2.5rem; }
+  .team-profile.flip .profile-photo { order: 0; }
+  .team-profile.flip .profile-info  { order: 0; }
+  .profile-photo { position: static; }
+  .profile-photo-wrap { max-width: 340px; }
+  .profile-stat-row { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="Logo/Excigent Logo.svg" alt="Excigent Tech Partners" /></a></div>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="expertise.html">Expertise</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="news.html">News</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-phone">+1 (800) 000-0000</span>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow">Leadership Team</span>
+    <h1>Three industry veterans.<br><strong>One shared vision</strong>.</h1>
+    <p>80+ combined years across broadband engineering, digital infrastructure, and security — with the relationships that move markets across the Americas.</p>
+  </div>
+</header>
+
+<!-- TEAM PROFILES -->
+<section class="section light">
+  <div class="section-inner">
+
+    <!-- Robert Lopez -->
+    <div class="team-profile reveal">
+      <div class="profile-photo">
+        <div class="profile-photo-wrap">
+          <img src="Team/Robert Lopez.png" alt="Robert Lopez" />
+        </div>
+      </div>
+      <div class="profile-info">
+        <p class="profile-eyebrow">Founding Partner</p>
+        <h2>Robert Lopez</h2>
+        <div class="profile-creds-row">
+          <span class="profile-cred">Broadband Engineering</span>
+          <span class="profile-cred">Network Design</span>
+          <span class="profile-cred">OSP Infrastructure</span>
+        </div>
+        <p class="profile-bio">Robert Lopez is a broadband engineering and design leader with over 20 years of experience supporting major network deployments and delivering construction-ready infrastructure solutions across North America and Latin America. He brings deep technical expertise in fiber infrastructure, OSP network design, FTTH architectures, and wireless broadband systems.</p>
+        <p class="profile-bio">Throughout his career, Robert has worked with leading ISPs, municipalities, and private network operators to design and deploy next-generation broadband infrastructure. His ability to translate complex technical requirements into commercially viable, construction-ready solutions makes him a uniquely valuable commercial partner for broadband-focused principals.</p>
+        <ul class="profile-highlights">
+          <li>20+ years in broadband engineering and network design</li>
+          <li>Deep expertise in fiber, FTTH/FTTx, and OSP infrastructure</li>
+          <li>Extensive ISP and network operator relationships across the Americas</li>
+          <li>Construction-ready design and specification experience</li>
+        </ul>
+        <div class="profile-stat-row">
+          <div><div class="profile-stat-val">20<sup>+</sup></div><div class="profile-stat-lbl">Years Experience</div></div>
+          <div><div class="profile-stat-val">3</div><div class="profile-stat-lbl">Regions Covered</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paul Weintraub -->
+    <div class="team-profile flip reveal" style="--d:0.05s">
+      <div class="profile-photo">
+        <div class="profile-photo-wrap">
+          <img src="Team/Paul Weintraub.png" alt="Paul Weintraub" />
+        </div>
+      </div>
+      <div class="profile-info">
+        <p class="profile-eyebrow">Founding Partner</p>
+        <h2>Paul Weintraub</h2>
+        <div class="profile-creds-row">
+          <span class="profile-cred">RCDD</span>
+          <span class="profile-cred">RTPM</span>
+          <span class="profile-cred">ESS</span>
+          <span class="profile-cred">TECH</span>
+        </div>
+        <p class="profile-bio">Paul Weintraub is a digital infrastructure leader with over 30 years of experience spanning broadband, ICT, data center, security, and communications markets. Holding credentials including RCDD (Registered Communications Distribution Designer), RTPM, ESS, and TECH, Paul brings a rare combination of technical depth and commercial acumen to every principal relationship.</p>
+        <p class="profile-bio">Paul's career has spanned product development, channel strategy, and enterprise sales across major infrastructure manufacturers and commercial agencies. His network of distributor, integrator, and end-user relationships across North America, Latin America, and the Caribbean gives principals an immediate commercial foothold in markets that would otherwise take years to penetrate independently.</p>
+        <ul class="profile-highlights">
+          <li>30+ years across broadband, ICT, data center &amp; security markets</li>
+          <li>Holds RCDD, RTPM, ESS, and TECH industry credentials</li>
+          <li>Deep distributor, integrator, and end-user network across the Americas</li>
+          <li>Extensive channel development and product commercialization experience</li>
+        </ul>
+        <div class="profile-stat-row">
+          <div><div class="profile-stat-val">30<sup>+</sup></div><div class="profile-stat-lbl">Years Experience</div></div>
+          <div><div class="profile-stat-val">4</div><div class="profile-stat-lbl">Technology Markets</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- John Centofanti -->
+    <div class="team-profile reveal" style="--d:0.1s">
+      <div class="profile-photo">
+        <div class="profile-photo-wrap">
+          <img src="Team/John Centofanti.png" alt="John Centofanti" />
+        </div>
+      </div>
+      <div class="profile-info">
+        <p class="profile-eyebrow">Founding Partner</p>
+        <h2>John Centofanti</h2>
+        <div class="profile-creds-row">
+          <span class="profile-cred">Security Leadership</span>
+          <span class="profile-cred">Business Development</span>
+          <span class="profile-cred">Program Management</span>
+        </div>
+        <p class="profile-bio">John Centofanti is a security industry leader with over 30 years of experience in sales, business development, and program leadership across commercial and public-sector markets. He has built and led high-performance sales organizations, managed complex multi-year programs, and established deep relationships with security integrators, distributors, and end-user communities across North America and the Caribbean.</p>
+        <p class="profile-bio">John's expertise spans access control, video surveillance, biometrics, intrusion systems, and integrated security platforms. He brings a strategic commercial perspective that bridges the technical and business sides of security — helping principals navigate complex procurement environments and build sustainable channel programs that deliver measurable revenue growth.</p>
+        <ul class="profile-highlights">
+          <li>30+ years in security sales, BD, and program leadership</li>
+          <li>Commercial and public-sector market expertise</li>
+          <li>Extensive integrator and distributor relationships across North America &amp; Caribbean</li>
+          <li>Deep expertise across access, video, biometrics, and intrusion markets</li>
+        </ul>
+        <div class="profile-stat-row">
+          <div><div class="profile-stat-val">30<sup>+</sup></div><div class="profile-stat-lbl">Years Experience</div></div>
+          <div><div class="profile-stat-val">2</div><div class="profile-stat-lbl">Sectors Served</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="subscribe">
+  <div class="subscribe-inner">
+    <h2 class="reveal">Work with a team that <strong>knows your market</strong>.</h2>
+    <p class="reveal" style="--d:0.08s">Reach out to learn how Excigent can help accelerate your commercial growth across the Americas.</p>
+    <div class="page-hero-actions" style="justify-content:center; margin-top:0;">
+      <a href="contact.html" class="btn-fill" style="background:#fff;color:#0F405A;">Contact the Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><img src="Logo/Excigent Logo.svg" alt="Excigent Tech Partners" /><p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p><div class="footer-contact"><a href="mailto:hello@excigent.com">hello@excigent.com</a><a href="tel:+18000000000">+1 (800) 000-0000</a></div></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="about.html#why">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Markets</h4><ul><li><a href="expertise.html#broadband">Broadband</a></li><li><a href="expertise.html#ict">ICT</a></li><li><a href="expertise.html#security">Security</a></li><li><a href="about.html#network">Our Regions</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#channel">Channel Development</a></li><li><a href="services.html#positioning">Market Positioning</a></li><li><a href="services.html#marketing">Marketing &amp; Visibility</a></li><li><a href="services.html#process">Our Process</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Excigent Tech Partners. All rights reserved.</span>
+    <div class="footer-social">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.49 6S0 4.881 0 3.5 1.11 1 2.49 1s2.49 1.119 2.49 2.5zM.22 8h4.54v14H.22V8zm7.61 0h4.35v1.91h.06c.61-1.15 2.09-2.36 4.31-2.36 4.61 0 5.46 3.03 5.46 6.97V22h-4.54v-6.95c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.81-2.66 3.67V22H7.83V8z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

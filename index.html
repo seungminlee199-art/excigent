@@ -155,6 +155,66 @@ nav { animation: navSlideDown 0.8s cubic-bezier(0.22,1,0.36,1) 3.0s both; }
   .svc.bl { left: -60px; }
   .svc.br { right: -60px; }
 }
+
+/* ── HERO SEARCH ── */
+.hero-search {
+  position: absolute;
+  top: 40%;
+  right: 3.5rem;
+  transform: translateY(-50%);
+  z-index: 40;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(15,64,90,0.14);
+  border-radius: 34px;
+  box-shadow: 0 1px 3px rgba(15,64,90,0.06), 0 10px 28px -10px rgba(15,64,90,0.28);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 0.55s cubic-bezier(0.22,1,0.36,1),
+              background 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  animation: fadeIn 0.6s ease-out 4.9s both,
+             heroSearchPulse 2.6s ease-in-out 5.6s infinite;
+}
+@keyframes heroSearchPulse {
+  0%, 100% { box-shadow: 0 1px 3px rgba(15,64,90,0.06), 0 10px 28px -10px rgba(15,64,90,0.28), 0 0 0 0 rgba(18,96,167,0.55); }
+  60%       { box-shadow: 0 1px 3px rgba(15,64,90,0.06), 0 10px 28px -10px rgba(15,64,90,0.28), 0 0 0 14px rgba(18,96,167,0); }
+}
+.hero-search:hover:not(.open) { background: rgba(255,255,255,0.95); border-color: rgba(18,96,167,0.4); }
+.hero-search-icon { width: 60px; height: 60px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--navy); transition: transform 0.3s cubic-bezier(0.22,1,0.36,1); }
+.hero-search:hover:not(.open) .hero-search-icon { transform: scale(1.08); }
+.hero-search-icon svg { width: 22px; height: 22px; }
+.hero-search-input { flex: 1; min-width: 0; height: 100%; border: none; outline: none; background: transparent; font-family: inherit; font-size: 0.95rem; color: var(--navy); opacity: 0; pointer-events: none; padding: 0; transition: opacity 0.25s ease 0.2s; }
+.hero-search-input::placeholder { color: var(--muted); }
+.hero-search-close { flex-shrink: 0; width: 40px; height: 40px; margin-right: 8px; border: none; background: transparent; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--muted); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.2s ease 0.2s, background 0.18s ease, color 0.18s ease; }
+.hero-search-close:hover { background: rgba(15,64,90,0.08); color: var(--navy); }
+.hero-search-close svg { width: 18px; height: 18px; }
+.hero-search.open { width: 440px; cursor: text; background: rgba(255,255,255,0.97); border-color: rgba(18,96,167,0.35); box-shadow: 0 2px 6px rgba(15,64,90,0.08), 0 18px 40px -12px rgba(15,64,90,0.35); animation: fadeIn 0.6s ease-out 4.9s both; }
+.hero-search.open .hero-search-input { opacity: 1; pointer-events: auto; }
+.hero-search.open .hero-search-close { opacity: 1; pointer-events: auto; }
+
+.hero-search-results { position: absolute; right: 3.5rem; width: 440px; z-index: 39; background: rgba(255,255,255,0.98); border: 1px solid rgba(15,64,90,0.10); border-radius: 18px; padding: 10px 8px 12px; box-shadow: 0 1px 2px rgba(15,64,90,0.06), 0 8px 20px -4px rgba(15,64,90,0.14), 0 28px 60px -16px rgba(15,64,90,0.24); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); opacity: 0; transform: translateY(-6px); pointer-events: none; transition: opacity 0.22s ease, transform 0.22s ease; }
+.hero-search-results.visible { opacity: 1; transform: translateY(0); pointer-events: auto; transition: opacity 0.32s ease 0.22s, transform 0.32s ease 0.22s; }
+.hero-search-section { display: flex; align-items: center; gap: 6px; padding: 8px 14px 6px; font-size: 0.62rem; font-weight: 600; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; }
+.hero-search-section svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hero-search-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 9px 12px; border: none; background: transparent; border-radius: 12px; font-family: inherit; font-size: 0.86rem; color: var(--navy); text-align: left; cursor: pointer; transition: background 0.18s ease, color 0.18s ease; }
+.hero-search-item:hover { background: rgba(18,96,167,0.08); color: var(--blue); }
+.hero-search-item-icon { width: 30px; height: 30px; border-radius: 50%; background: rgba(15,64,90,0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--soft); transition: background 0.18s ease, color 0.18s ease; }
+.hero-search-item:hover .hero-search-item-icon { background: rgba(18,96,167,0.14); color: var(--blue); }
+.hero-search-item-icon svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hero-search-item-text { flex: 1; }
+.hero-search-item-arrow { display: flex; align-items: center; color: var(--muted); opacity: 0; transform: translateX(-4px); transition: opacity 0.18s ease, transform 0.18s ease; }
+.hero-search-item-arrow svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hero-search-item:hover .hero-search-item-arrow { opacity: 0.8; transform: translateX(0); }
+.hero-search-divider { height: 1px; background: rgba(15,64,90,0.07); margin: 6px 8px; }
 </style>
 </head>
 <body>
@@ -184,9 +244,63 @@ nav { animation: navSlideDown 0.8s cubic-bezier(0.22,1,0.36,1) 3.0s both; }
 <section class="hero">
   <div class="hero-dots-dark" aria-hidden="true"></div>
 
-  <div class="hero-inner">
-    <span class="eyebrow">Next-Generation Technology Leadership</span>
+  <div class="hero-search" id="heroSearch" role="search">
+    <span class="hero-search-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
+      </svg>
+    </span>
+    <input type="text" class="hero-search-input" placeholder="Search Excigent…" aria-label="Search" />
+    <button type="button" class="hero-search-close" aria-label="Close search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
 
+  <div class="hero-search-results" id="heroSearchResults" aria-hidden="true">
+    <div class="hero-search-section">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+      Recent
+    </div>
+    <button type="button" class="hero-search-item" data-q="Fiber Installation">
+      <span class="hero-search-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>
+      <span class="hero-search-item-text">Fiber Installation</span>
+      <span class="hero-search-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </button>
+    <button type="button" class="hero-search-item" data-q="Data Center Solutions">
+      <span class="hero-search-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>
+      <span class="hero-search-item-text">Data Center Solutions</span>
+      <span class="hero-search-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </button>
+    <button type="button" class="hero-search-item" data-q="Access Control">
+      <span class="hero-search-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>
+      <span class="hero-search-item-text">Access Control</span>
+      <span class="hero-search-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </button>
+    <div class="hero-search-divider"></div>
+    <div class="hero-search-section">
+      <svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>
+      Trending
+    </div>
+    <button type="button" class="hero-search-item" data-q="Broadband Infrastructure">
+      <span class="hero-search-item-icon"><svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></span>
+      <span class="hero-search-item-text">Broadband Infrastructure</span>
+      <span class="hero-search-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </button>
+    <button type="button" class="hero-search-item" data-q="Network Connectivity">
+      <span class="hero-search-item-icon"><svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></span>
+      <span class="hero-search-item-text">Network Connectivity</span>
+      <span class="hero-search-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </button>
+    <button type="button" class="hero-search-item" data-q="Structured Cabling">
+      <span class="hero-search-item-icon"><svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></span>
+      <span class="hero-search-item-text">Structured Cabling</span>
+      <span class="hero-search-item-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </button>
+  </div>
+
+  <div class="hero-inner">
     <div class="globe-wrap">
       <div class="globe-stage" id="globeStage">
         <div class="globe-glow"></div>
@@ -490,7 +604,79 @@ function hideService() { document.querySelectorAll('.svc').forEach(b=>b.classLis
 /* ── Animation cleanup ── */
 (function(){
   function onAnimEnd(el){ if(!el) return; el.addEventListener('animationend',function h(e){ if(e.target!==el) return; el.removeEventListener('animationend',h); el.style.animation='none'; el.style.transform=''; el.style.opacity=''; el.style.filter=''; }); }
-  onAnimEnd(document.querySelector('nav')); onAnimEnd(document.querySelector('.globe-visual')); onAnimEnd(document.querySelector('.globe-glow')); onAnimEnd(document.querySelector('.conn-svg')); onAnimEnd(document.getElementById('btn-broadband')); onAnimEnd(document.getElementById('btn-ict')); onAnimEnd(document.getElementById('btn-security')); onAnimEnd(document.querySelector('.eyebrow')); onAnimEnd(document.querySelector('.headline h1')); onAnimEnd(document.querySelector('.headline p')); onAnimEnd(document.querySelector('.hero-btns'));
+  onAnimEnd(document.querySelector('nav')); onAnimEnd(document.querySelector('.globe-visual')); onAnimEnd(document.querySelector('.globe-glow')); onAnimEnd(document.querySelector('.conn-svg')); onAnimEnd(document.getElementById('btn-broadband')); onAnimEnd(document.getElementById('btn-ict')); onAnimEnd(document.getElementById('btn-security')); onAnimEnd(document.querySelector('.headline h1')); onAnimEnd(document.querySelector('.headline p')); onAnimEnd(document.querySelector('.hero-btns'));
+})();
+
+/* ── Hero search ── */
+(function initHeroSearch() {
+  const search = document.getElementById('heroSearch');
+  if (!search) return;
+  const input = search.querySelector('.hero-search-input');
+  const closeBtn = search.querySelector('.hero-search-close');
+  const globeWrap = document.querySelector('.globe-wrap');
+  const anchor = document.getElementById('btn-broadband');
+  const hero = document.querySelector('.hero');
+  const results = document.getElementById('heroSearchResults');
+
+  function alignToAnchor() {
+    if (!anchor || !hero) return;
+    let y = 0, el = anchor;
+    while (el && el !== hero) { y += el.offsetTop; el = el.offsetParent; }
+    const centerY = y + anchor.offsetHeight / 2;
+    search.style.top = centerY + 'px';
+    positionResults();
+  }
+  function positionResults() {
+    if (!results) return;
+    const searchTop = parseFloat(search.style.top || '0');
+    if (!searchTop) return;
+    results.style.top = (searchTop + search.offsetHeight / 2 + 12) + 'px';
+  }
+  alignToAnchor();
+  window.addEventListener('resize', alignToAnchor);
+  window.addEventListener('load', alignToAnchor);
+
+  function open() {
+    if (search.classList.contains('open')) return;
+    search.classList.add('open');
+    if (globeWrap) globeWrap.classList.add('shifted');
+    positionResults();
+    if (results) results.classList.add('visible');
+    setTimeout(() => input && input.focus(), 220);
+  }
+  function collapse() {
+    if (!search.classList.contains('open')) return;
+    search.classList.remove('open');
+    if (globeWrap) globeWrap.classList.remove('shifted');
+    if (results) results.classList.remove('visible');
+    if (input) { input.value = ''; input.blur(); }
+  }
+
+  search.addEventListener('click', (e) => {
+    if (search.classList.contains('open')) return;
+    if (e.target === closeBtn || closeBtn.contains(e.target)) return;
+    open();
+  });
+  closeBtn.addEventListener('click', (e) => { e.stopPropagation(); collapse(); });
+  input.addEventListener('click', (e) => e.stopPropagation());
+
+  if (results) {
+    results.addEventListener('click', (e) => e.stopPropagation());
+    results.querySelectorAll('.hero-search-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const q = item.dataset.q || item.querySelector('.hero-search-item-text').textContent;
+        if (input) { input.value = q; input.focus(); }
+      });
+    });
+  }
+
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') collapse(); });
+  document.addEventListener('click', (e) => {
+    if (!search.classList.contains('open')) return;
+    if (search.contains(e.target)) return;
+    if (results && results.contains(e.target)) return;
+    collapse();
+  });
 })();
 </script>
 <script src="js/main.js"></script>

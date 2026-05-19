@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>News — Excigent Tech Partners</title>
+<meta name="robots" content="index, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="css/style.css" />
+<style>
+.article-hero {
+  padding-top: 64px;
+  background: linear-gradient(160deg, #061F2E 0%, #0A2F45 55%, #0F405A 100%);
+  position: relative; overflow: hidden;
+}
+.article-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 36px 36px; pointer-events: none;
+}
+.article-hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 55% 60% at 10% 0%, rgba(18,96,167,0.35), transparent 65%);
+  pointer-events: none;
+}
+.article-hero-inner {
+  position: relative; z-index: 2;
+  max-width: 860px; margin: 0 auto;
+  padding: 5rem 2rem 5.5rem;
+}
+.article-back {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+  text-decoration: none; margin-bottom: 2rem;
+  transition: color 0.2s ease;
+}
+.article-back:hover { color: #fff; }
+.article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.article-tag {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #fff;
+  padding: 0.35rem 0.85rem;
+  background: rgba(18,96,167,0.75); backdrop-filter: blur(8px);
+  border-radius: 30px; margin-bottom: 1.5rem;
+}
+.article-hero-inner h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300; color: #fff;
+  line-height: 1.22; letter-spacing: -0.022em;
+  margin-bottom: 1.5rem; max-width: 720px;
+}
+.article-hero-inner h1 strong { font-weight: 700; }
+.article-meta {
+  display: flex; align-items: center; gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.article-meta-date { font-size: 0.84rem; color: rgba(255,255,255,0.65); }
+.article-meta-author {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.84rem; color: rgba(255,255,255,0.75);
+}
+.author-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+
+/* Article body */
+.article-body-wrap {
+  max-width: 860px; margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  display: grid; grid-template-columns: 1fr 260px; gap: 5rem; align-items: start;
+}
+.article-content { min-width: 0; }
+.article-thumb {
+  width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+.article-thumb-bg {
+  width: 100%; height: 100%;
+  position: relative;
+}
+.article-thumb-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);
+  background-size: 20px 20px; opacity: 0.6;
+}
+.article-content p {
+  font-size: 1.05rem; line-height: 1.85;
+  color: #3a4a56; margin-bottom: 1.6rem;
+}
+.article-content h2 {
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--navy); margin: 2.5rem 0 1rem;
+  letter-spacing: -0.015em; line-height: 1.3;
+}
+.article-content h3 {
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--navy); margin: 2rem 0 0.75rem;
+}
+.article-content ul {
+  margin: 0 0 1.6rem 1.2rem;
+}
+.article-content ul li {
+  font-size: 1.05rem; line-height: 1.75; color: #3a4a56;
+  margin-bottom: 0.5rem;
+}
+.article-pullquote {
+  margin: 2.5rem 0; padding: 1.5rem 1.8rem;
+  border-left: 3px solid var(--blue);
+  background: rgba(18,96,167,0.04);
+  border-radius: 0 12px 12px 0;
+}
+.article-pullquote p {
+  font-size: 1.1rem; font-style: italic;
+  color: var(--navy); margin: 0; line-height: 1.7;
+}
+
+/* Sidebar */
+.article-sidebar { position: sticky; top: 88px; }
+.sidebar-card {
+  background: #fff; border: 1px solid rgba(15,64,90,0.10);
+  border-radius: 16px; padding: 1.6rem 1.5rem; margin-bottom: 1.2rem;
+}
+.sidebar-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 1rem;
+}
+.sidebar-card p { font-size: 0.9rem; line-height: 1.65; color: var(--muted); margin-bottom: 1rem; }
+.related-item {
+  display: flex; flex-direction: column; gap: 0.3rem;
+  padding: 0.85rem 0; border-bottom: 1px solid rgba(15,64,90,0.07);
+  text-decoration: none; transition: padding-left 0.2s ease;
+}
+.related-item:last-child { border-bottom: none; padding-bottom: 0; }
+.related-item:hover { padding-left: 4px; }
+.related-tag { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); }
+.related-title { font-size: 0.88rem; font-weight: 500; color: var(--navy); line-height: 1.4; }
+.related-item:hover .related-title { color: var(--blue); }
+
+/* Video embed area */
+.video-placeholder {
+  width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
+  background: linear-gradient(135deg, #0F405A, #1260A7 70%);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 2.5rem; position: relative; cursor: pointer;
+}
+.video-placeholder::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);
+  background-size: 20px 20px; opacity: 0.6;
+}
+.video-play-btn {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 2;
+  box-shadow: 0 12px 32px -8px rgba(0,0,0,0.45);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.video-placeholder:hover .video-play-btn { transform: scale(1.12); }
+.video-play-triangle { width: 0; height: 0; border-left: 18px solid var(--navy); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 4px; }
+
+@media (max-width: 900px) {
+  .article-body-wrap { grid-template-columns: 1fr; gap: 3rem; }
+  .article-sidebar { position: static; }
+}
+@media (max-width: 560px) {
+  .article-hero-inner { padding: 3.5rem 1.2rem 4rem; }
+  .article-body-wrap { padding: 2.5rem 1.2rem 4rem; }
+  .article-content p, .article-content ul li { font-size: 0.97rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="Logo/Excigent Logo.svg" alt="Excigent Tech Partners" /></a></div>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="expertise.html">Expertise</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="news.html">News</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-phone">+1 (800) 000-0000</span>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO (populated by JS) -->
+<div class="article-hero" id="articleHero">
+  <div class="article-hero-inner" id="articleHeroInner"></div>
+</div>
+
+<!-- ARTICLE BODY (populated by JS) -->
+<div class="article-body-wrap" id="articleBodyWrap"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><img src="Logo/Excigent Logo.svg" alt="Excigent Tech Partners" /><p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p><div class="footer-contact"><a href="mailto:hello@excigent.com">hello@excigent.com</a><a href="tel:+18000000000">+1 (800) 000-0000</a></div></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="about.html#why">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Markets</h4><ul><li><a href="expertise.html#broadband">Broadband</a></li><li><a href="expertise.html#ict">ICT</a></li><li><a href="expertise.html#security">Security</a></li><li><a href="about.html#network">Our Regions</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#channel">Channel Development</a></li><li><a href="services.html#positioning">Market Positioning</a></li><li><a href="services.html#marketing">Marketing &amp; Visibility</a></li><li><a href="services.html#process">Our Process</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Excigent Tech Partners. All rights reserved.</span>
+    <div class="footer-social">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.49 6S0 4.881 0 3.5 1.11 1 2.49 1s2.49 1.119 2.49 2.5zM.22 8h4.54v14H.22V8zm7.61 0h4.35v1.91h.06c.61-1.15 2.09-2.36 4.31-2.36 4.61 0 5.46 3.03 5.46 6.97V22h-4.54v-6.95c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.81-2.66 3.67V22H7.83V8z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+const ARTICLES = {
+  1: {
+    type: 'Article', date: 'May 12, 2026', read: '6 min read',
+    author: 'Excigent Editorial',
+    title: 'Why broadband, ICT &amp; security convergence is rewriting the infrastructure playbook',
+    thumb: 'linear-gradient(135deg, #061F2E 0%, #0F405A 50%, #1260A7 100%)',
+    isVideo: false,
+    body: `
+      <p>The future of infrastructure isn't three silos — it's an integrated system. Broadband delivers connectivity. ICT structures and manages it. Security protects it. When these three disciplines align, they produce environments that are smarter, safer, and far more competitive than any single-discipline approach.</p>
+      <p>For principals operating in any one of these markets, the convergence trend presents both an opportunity and a challenge: how do you position a point solution in a market that's increasingly buying integrated outcomes?</p>
+      <h2>What convergence actually means on the ground</h2>
+      <p>Convergence isn't a buzzword — it's a procurement reality. When a large enterprise or ISP builds a new facility today, the RFP rarely separates cabling from access control from wireless infrastructure. The buyer wants outcomes: a connected, intelligent, secure environment delivered by a team that understands how the pieces interact.</p>
+      <p>This means that a structured cabling principal who can speak credibly about optical LAN integration with access control systems has a material advantage over one that leads purely with product specs. The same logic applies across every category.</p>
+      <div class="article-pullquote"><p>"The principals winning in this market aren't just selling product — they're selling fluency. The ability to speak the language of convergence is now a commercial differentiator."</p></div>
+      <h2>Where channel opportunities are emerging fastest</h2>
+      <p>Three categories stand out as particularly fertile ground for convergence-positioned principals:</p>
+      <ul>
+        <li><strong>Multi-dwelling unit (MDU) builds</strong> — FTTH buildouts that require structured cabling, in-building wireless, and access control as a single integrated package.</li>
+        <li><strong>Enterprise campus expansions</strong> — ICT-heavy projects where video surveillance and access control are increasingly spec'd alongside network infrastructure.</li>
+        <li><strong>Government and education facilities</strong> — Buyers who mandate integrated security with connectivity, and who respond well to principals with a regional presence and compliance expertise.</li>
+      </ul>
+      <h2>What this means for your go-to-market</h2>
+      <p>If your commercial strategy still leads with a single product category, you're likely leaving revenue on the table and ceding positioning ground to competitors who have already embraced convergence messaging.</p>
+      <p>The practical implication: your channel partners need to be fluent in all three disciplines, even if they specialize in one. Training, collateral, and co-selling support that bridges the convergence gap is no longer optional — it's a requirement for sustained market traction across the Americas.</p>
+      <p>At Excigent, we help principals develop and execute exactly this kind of integrated channel strategy. If you're navigating this shift, <a href="contact.html" style="color:var(--blue)">we'd welcome the conversation</a>.</p>
+    `
+  },
+  2: {
+    type: 'Video', date: 'April 28, 2026', read: '4 min watch',
+    author: 'Excigent Team',
+    title: 'Inside our market model: from assessment to revenue growth',
+    thumb: 'linear-gradient(135deg, #0F405A, #1260A7 70%)',
+    isVideo: true,
+    body: `
+      <p>In this video, the Excigent team walks through the six-stage commercial framework we use with every principal we represent — from initial market assessment through to sustainable revenue growth.</p>
+      <h2>The six stages</h2>
+      <ul>
+        <li><strong>01 — Assess:</strong> Market fit and opportunity sizing. We evaluate where your solution has genuine traction potential across North America, Latin America, and the Caribbean.</li>
+        <li><strong>02 — Align:</strong> Right partners and channels identified. We map the distribution landscape and identify the channel relationships most likely to move your product.</li>
+        <li><strong>03 — Build:</strong> Strategic relationships developed. We make introductions, facilitate conversations, and build the commercial relationships that matter.</li>
+        <li><strong>04 — Position:</strong> Solutions positioned effectively. We work with your team to develop messaging that resonates with regional buyers and channel partners.</li>
+        <li><strong>05 — Activate:</strong> Visibility opportunities executed. Trade events, content, and outreach campaigns that put your brand in front of the right audience.</li>
+        <li><strong>06 — Grow:</strong> Pipeline, traction and revenue. Ongoing commercial execution and reporting to ensure momentum compounds over time.</li>
+      </ul>
+      <div class="article-pullquote"><p>"We don't make introductions — we execute. Every stage is designed to produce a commercial outcome, not just activity."</p></div>
+      <p>This framework has been refined over decades of working with technology principals across broadband, ICT, and security. It's not theoretical — it's the operational model we apply to every engagement.</p>
+      <p>Want to understand how this framework would apply to your specific situation? <a href="contact.html" style="color:var(--blue)">Start a conversation with our team.</a></p>
+    `
+  },
+  3: {
+    type: 'Article', date: 'April 15, 2026', read: '3 min read',
+    author: 'Robert Lopez',
+    title: 'Latin America &amp; Caribbean: where channel relationships still win deals',
+    thumb: 'linear-gradient(135deg, #0A2F45, #1260A7 70%)',
+    isVideo: false,
+    body: `
+      <p>In North American enterprise sales, the RFP process is formalized, procurement teams are structured, and decisions are increasingly data-driven. In Latin America and the Caribbean, relationships still determine outcomes — often more than price, specification, or brand recognition.</p>
+      <p>This isn't a weakness of the market. It's a characteristic that rewards principals who invest in the region properly, and penalizes those who treat it as an afterthought.</p>
+      <h2>What "relationship-first" actually means</h2>
+      <p>When we say relationships win deals in LATAM and the Caribbean, we mean something specific: the trust built between a distributor or integrator and their end-customer over years of reliable delivery often outweighs any product advantage a new entrant can offer.</p>
+      <p>The implication for principals is clear — you need channel partners who already have those relationships, and you need a representative who can make credible introductions into that network. Cold outreach, digital-only marketing, and price-cutting rarely break through.</p>
+      <div class="article-pullquote"><p>"In this region, the question isn't 'what does your product do?' — it's 'who vouches for you?' That answer has to come from someone already in the room."</p></div>
+      <h2>Where the real opportunities are in 2026</h2>
+      <p>Despite the relationship dynamic, the market is moving fast. Several categories are seeing genuine pull-through demand:</p>
+      <ul>
+        <li>Government-funded broadband expansion programs in multiple Caribbean island markets</li>
+        <li>Enterprise ICT upgrades driven by nearshoring and manufacturing investment in Mexico and Colombia</li>
+        <li>Physical security upgrades across the hospitality and retail sectors in major LATAM cities</li>
+      </ul>
+      <p>Principals who establish channel relationships now — before these programs accelerate — will be positioned to capture disproportionate share. Those who wait until the market is obvious will find the channel locked up by competitors who moved earlier.</p>
+      <p>If you're evaluating a LATAM or Caribbean market entry, <a href="contact.html" style="color:var(--blue)">we'd welcome the conversation</a>.</p>
+    `
+  },
+  4: {
+    type: 'Newsletter', date: 'March 30, 2026', read: '5 min read',
+    author: 'Excigent Editorial',
+    title: 'Q1 Market Signal: Structured cabling demand up as enterprise builds accelerate',
+    thumb: 'linear-gradient(135deg, #0A2F45, #2363A0 70%)',
+    isVideo: false,
+    body: `
+      <p>Q1 2026 confirmed a trend we've been tracking since late last year: structured cabling is no longer the quiet baseline of enterprise ICT — it's an active growth category, driven by the intersection of AI infrastructure buildouts, hybrid work consolidation, and the continued migration from copper to fiber in the enterprise LAN.</p>
+      <h2>What's driving the demand</h2>
+      <p>Three converging forces are accelerating structured cabling spend across the Americas:</p>
+      <ul>
+        <li><strong>AI and data center adjacency:</strong> As organizations invest in on-premise AI infrastructure, the cabling backbone connecting servers, switches, and endpoints is being upgraded to support higher bandwidth and lower latency requirements.</li>
+        <li><strong>Hybrid work consolidation:</strong> Companies are right-sizing their real estate footprint — and the offices that remain are being rebuilt to enterprise-grade specifications, including comprehensive structured cabling for AV, wireless access points, and IoT endpoints.</li>
+        <li><strong>Optical LAN adoption:</strong> The shift from traditional copper LAN to passive optical LAN is driving rip-and-replace projects in education, healthcare, and government facilities across the region.</li>
+      </ul>
+      <div class="article-pullquote"><p>"Cabling is infrastructure — it doesn't generate headlines. But the projects we're seeing in Q1 suggest the market is in a genuine build cycle, not just a replacement cycle."</p></div>
+      <h2>What this means for channel strategy</h2>
+      <p>For structured cabling principals, the opportunity is real but competitive. The principals capturing share are those with strong integrator relationships, relevant certifications for the specific verticals in play, and the ability to spec alongside complementary systems (particularly wireless and access control).</p>
+      <p>For channel partners, the Q1 signal suggests that now is a strong time to build or deepen relationships with cabling principals — demand is accelerating and shelf space in integrator portfolios will tighten as projects ramp.</p>
+      <p>Questions about what we're seeing in specific markets? <a href="contact.html" style="color:var(--blue)">Reach out to our team.</a></p>
+    `
+  },
+  5: {
+    type: 'Video', date: 'March 12, 2026', read: '7 min watch',
+    author: 'Robert Lopez',
+    title: 'FTTH deployment trends in 2026: what ISPs need from their supply chain',
+    thumb: 'linear-gradient(135deg, #061F2E, #0F405A 70%)',
+    isVideo: true,
+    body: `
+      <p>Robert Lopez breaks down the infrastructure patterns driving broadband buildouts in 2026, and what they mean for principals supplying into the ISP and carrier market across the Americas.</p>
+      <h2>The buildout context</h2>
+      <p>Government-funded broadband expansion programs — across the US, Canada, and multiple Caribbean and Latin American markets — have created a multi-year runway of FTTH deployment activity. The question for supply chain participants isn't whether demand exists, but how to access it efficiently.</p>
+      <ul>
+        <li>OSP fiber and conduit demand remains strong as build crews scale up in rural and underserved markets</li>
+        <li>FTTH CPE (ONTs, routers) is a competitive category with margin pressure — differentiation requires service wraps or vertical specialization</li>
+        <li>Installation tooling and test equipment are seeing consistent demand as ISPs build out field operations capacity</li>
+      </ul>
+      <div class="article-pullquote"><p>"The ISPs winning the buildout race aren't just buying product — they're building supply chain relationships that give them predictable delivery and responsive support. Principals who can offer that have a durable advantage."</p></div>
+      <h2>What ISPs actually want from suppliers</h2>
+      <p>Based on our conversations with operators across the region, the top supply chain priorities in 2026 are:</p>
+      <ul>
+        <li>Inventory availability and lead-time predictability — not just price</li>
+        <li>Technical support that understands the deployment context, not just the product spec sheet</li>
+        <li>Regional presence and the ability to support projects in markets that large distributors underserve</li>
+      </ul>
+      <p>If you're a principal in the broadband supply chain and want to understand where the channel access opportunities are, <a href="contact.html" style="color:var(--blue)">let's talk.</a></p>
+    `
+  },
+  6: {
+    type: 'Market Update', date: 'February 20, 2026', read: '4 min read',
+    author: 'Excigent Editorial',
+    title: 'Security convergence: why access control and video are selling together',
+    thumb: 'linear-gradient(135deg, #0F405A, #3B6998 70%)',
+    isVideo: false,
+    body: `
+      <p>The physical security market is undergoing a structural shift that's reshaping how integrators specify, how buyers procure, and how principals need to position their solutions. Access control and video surveillance — once distinct categories sold by different teams to different buyers — are increasingly specified, sold, and integrated as a unified system.</p>
+      <h2>What's driving the convergence</h2>
+      <p>Three forces are accelerating the integration of access control and video:</p>
+      <ul>
+        <li><strong>IP infrastructure alignment:</strong> Both systems now run on the same network infrastructure, making integrated management a natural outcome rather than a complex integration project.</li>
+        <li><strong>AI-powered analytics:</strong> Video systems with embedded analytics can trigger access control responses in real time — a capability that only makes sense when the systems share a common platform.</li>
+        <li><strong>Buyer sophistication:</strong> End customers — particularly in enterprise, healthcare, and government — are increasingly asking for integrated outcomes rather than point products.</li>
+      </ul>
+      <div class="article-pullquote"><p>"The integrators who are winning the large security projects in 2026 are leading with the integrated story. Single-category pitches are losing ground fast."</p></div>
+      <h2>Implications for principals</h2>
+      <p>If you sell access control or video as a standalone category, you face a positioning challenge: your buyers are increasingly evaluating you against vendors who can offer both, even if your product is technically superior in its category.</p>
+      <p>The channel response to this is partner ecosystems — access control principals partnering with video principals to offer integrated solutions through shared integrator relationships. This is an area where a regional commercial agency can add significant value, by identifying and structuring the right partnerships for specific markets.</p>
+      <p>Interested in how this trend is playing out in specific markets across the Americas? <a href="contact.html" style="color:var(--blue)">Our team is happy to share what we're seeing.</a></p>
+    `
+  },
+  7: {
+    type: 'Article', date: 'January 28, 2026', read: '4 min read',
+    author: 'Paul Weintraub',
+    title: 'The case for Optical LAN: why POL is gaining traction in enterprise ICT',
+    thumb: 'linear-gradient(135deg, #1260A7, #0F405A 70%)',
+    isVideo: false,
+    body: `
+      <p>Passive Optical LAN has been discussed as a potential enterprise networking alternative for years. In 2026, the conversation has shifted: POL is no longer a niche consideration for specialized facilities — it's a mainstream option that enterprise ICT decision-makers are actively evaluating across healthcare, education, government, and commercial real estate.</p>
+      <p>The question is no longer whether POL works. The question is whether your channel is positioned to sell it.</p>
+      <h2>Why the timing has shifted</h2>
+      <p>Several factors have combined to move POL from early adopter to mainstream consideration:</p>
+      <ul>
+        <li><strong>Total cost of ownership:</strong> As copper Ethernet infrastructure ages and switch-heavy architectures require expensive upgrades, the lifecycle economics of POL — fewer active components, lower power consumption, longer infrastructure life — look increasingly attractive.</li>
+        <li><strong>Bandwidth headroom:</strong> Enterprise applications (video collaboration, IoT density, AI endpoint integration) are consuming bandwidth at rates that active copper architectures weren't designed to support at scale.</li>
+        <li><strong>Vendor maturity:</strong> The POL vendor ecosystem has matured significantly, with enterprise-grade management platforms, robust support models, and multi-vendor interoperability that wasn't available three years ago.</li>
+      </ul>
+      <div class="article-pullquote"><p>"The facilities that are spec'ing POL today are making a 20-year infrastructure decision. The principals who establish credibility in this category now will benefit from that decision for a long time."</p></div>
+      <h2>What the channel needs to do differently</h2>
+      <p>Selling POL requires a different conversation than selling traditional structured cabling. The value proposition is financial and strategic, not just technical — and it needs to reach CFOs and facility managers, not just IT directors.</p>
+      <p>Principals who are serious about POL market development need channel partners who can have that broader conversation, and commercial representation that understands how to position optical infrastructure against the installed base of copper alternatives.</p>
+      <p>If you're a POL principal evaluating your channel strategy in North America, LATAM, or the Caribbean, <a href="contact.html" style="color:var(--blue)">we'd welcome the conversation.</a></p>
+    `
+  }
+};
+
+const RELATED = [
+  { id:1, type:'Article', title:'Broadband, ICT &amp; security convergence' },
+  { id:3, type:'Article', title:'Latin America &amp; Caribbean channel relationships' },
+  { id:4, type:'Newsletter', title:'Q1 Market Signal: Structured cabling demand' },
+  { id:6, type:'Market Update', title:'Security convergence: access control + video' },
+  { id:7, type:'Article', title:'The case for Optical LAN in enterprise ICT' },
+];
+
+function render() {
+  const id = parseInt(new URLSearchParams(window.location.search).get('id')) || 1;
+  const a = ARTICLES[id];
+  if (!a) { window.location.href = 'news.html'; return; }
+
+  document.title = a.title.replace(/&amp;/g,'&') + ' — Excigent Tech Partners';
+
+  // Hero
+  document.getElementById('articleHeroInner').innerHTML = `
+    <a href="news.html" class="article-back">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to News
+    </a>
+    <div class="article-tag">${a.type}</div>
+    <h1>${a.title}</h1>
+    <div class="article-meta">
+      <span class="article-meta-date">${a.date} · ${a.read}</span>
+      <span class="article-meta-author"><span class="author-dot"></span>${a.author}</span>
+    </div>`;
+
+  // Related (exclude current)
+  const related = RELATED.filter(r => r.id !== id).slice(0, 3);
+  const relatedHTML = related.map(r => `
+    <a class="related-item" href="news-detail.html?id=${r.id}">
+      <span class="related-tag">${r.type}</span>
+      <span class="related-title">${r.title}</span>
+    </a>`).join('');
+
+  const thumbHTML = a.isVideo
+    ? `<div class="video-placeholder" style="background:${a.thumb}">
+        <div class="video-play-btn"><div class="video-play-triangle"></div></div>
+       </div>`
+    : `<div class="article-thumb">
+        <div class="article-thumb-bg" style="background:${a.thumb}"></div>
+       </div>`;
+
+  document.getElementById('articleBodyWrap').innerHTML = `
+    <div class="article-content reveal">
+      ${thumbHTML}
+      ${a.body}
+      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(15,64,90,0.08);display:flex;gap:0.75rem;flex-wrap:wrap">
+        <a href="contact.html" class="btn-fill dark">Start a Conversation</a>
+        <a href="news.html" class="btn-ghost navy">← All Articles</a>
+      </div>
+    </div>
+    <aside class="article-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-label">About Excigent</div>
+        <p>We are a commercial agency helping innovative Broadband, ICT, and Security companies build channels and accelerate revenue growth across the Americas.</p>
+        <a href="about.html" class="btn-fill dark" style="font-size:0.76rem;padding:0.55rem 1.2rem">Learn More</a>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Related Articles</div>
+        ${relatedHTML}
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Stay Informed</div>
+        <p>Quarterly insights on Broadband, ICT &amp; Security convergence.</p>
+        <form class="subscribe-form" style="flex-direction:column;border-radius:12px;padding:0.5rem;background:rgba(15,64,90,0.06);border:1px solid rgba(15,64,90,0.14);max-width:100%">
+          <input type="email" placeholder="your@email.com" required style="color:var(--navy);padding:0.5rem 0.75rem;font-size:0.88rem" />
+          <button type="submit" style="background:var(--navy);color:#fff;border-radius:8px;margin-top:0.4rem;font-size:0.78rem">Subscribe</button>
+        </form>
+      </div>
+    </aside>`;
+}
+
+render();
+</script>
+</body>
+</html>

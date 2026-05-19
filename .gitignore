@@ -4,3 +4,6 @@ Thumbs.db
 *.docx
 hero-preview-stable.html
 hero-preview-v3.html
+
+.vercel
+.env*.local

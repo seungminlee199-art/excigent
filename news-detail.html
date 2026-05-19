@@ -9,145 +9,72 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="css/style.css" />
 <style>
-.article-hero {
-  padding-top: 64px;
-  background: linear-gradient(160deg, #061F2E 0%, #0A2F45 55%, #0F405A 100%);
-  position: relative; overflow: hidden;
-}
-.article-hero::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
-  background-size: 36px 36px; pointer-events: none;
-}
-.article-hero::after {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 55% 60% at 10% 0%, rgba(18,96,167,0.35), transparent 65%);
-  pointer-events: none;
-}
-.article-hero-inner {
-  position: relative; z-index: 2;
-  max-width: 860px; margin: 0 auto;
-  padding: 5rem 2rem 5.5rem;
-}
-.article-back {
+/* ── Article hero tweaks ─────────────────────────────── */
+.page-hero-inner .article-back {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
-  text-transform: uppercase; color: rgba(255,255,255,0.6);
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
   text-decoration: none; margin-bottom: 2rem;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
-.article-back:hover { color: #fff; }
-.article-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.article-tag {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em;
-  text-transform: uppercase; color: #fff;
-  padding: 0.35rem 0.85rem;
-  background: rgba(18,96,167,0.75); backdrop-filter: blur(8px);
-  border-radius: 30px; margin-bottom: 1.5rem;
+.page-hero-inner .article-back:hover { color: #fff; }
+.page-hero-inner .article-back svg {
+  width: 14px; height: 14px; stroke: currentColor;
+  fill: none; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
 }
-.article-hero-inner h1 {
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+.page-hero-inner h1 {
+  font-size: clamp(1.75rem, 3.5vw, 2.8rem);
   font-weight: 300; color: #fff;
   line-height: 1.22; letter-spacing: -0.022em;
-  margin-bottom: 1.5rem; max-width: 720px;
+  margin-bottom: 1.5rem; max-width: 760px;
 }
-.article-hero-inner h1 strong { font-weight: 700; }
+.page-hero-inner h1 strong { font-weight: 700; }
 .article-meta {
-  display: flex; align-items: center; gap: 1.5rem;
-  flex-wrap: wrap;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
-.article-meta-date { font-size: 0.84rem; color: rgba(255,255,255,0.65); }
+.article-meta-date { font-size: 0.84rem; color: rgba(255,255,255,0.6); }
 .article-meta-author {
-  display: flex; align-items: center; gap: 0.6rem;
+  display: flex; align-items: center; gap: 0.55rem;
   font-size: 0.84rem; color: rgba(255,255,255,0.75);
 }
-.author-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+.author-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #6FB0E4; flex-shrink: 0;
+}
 
-/* Article body */
-.article-body-wrap {
-  max-width: 860px; margin: 0 auto;
-  padding: 4rem 2rem 6rem;
-  display: grid; grid-template-columns: 1fr 260px; gap: 5rem; align-items: start;
+/* ── Article body layout ─────────────────────────────── */
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: start;
 }
 .article-content { min-width: 0; }
+
+/* Thumb / Video */
 .article-thumb {
   width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem; position: relative;
 }
 .article-thumb-bg {
-  width: 100%; height: 100%;
-  position: relative;
+  width: 100%; height: 100%; position: relative;
 }
 .article-thumb-bg::before {
   content: ''; position: absolute; inset: 0;
   background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);
-  background-size: 20px 20px; opacity: 0.6;
+  background-size: 22px 22px; opacity: 0.55;
 }
-.article-content p {
-  font-size: 1.05rem; line-height: 1.85;
-  color: #3a4a56; margin-bottom: 1.6rem;
-}
-.article-content h2 {
-  font-size: 1.4rem; font-weight: 700;
-  color: var(--navy); margin: 2.5rem 0 1rem;
-  letter-spacing: -0.015em; line-height: 1.3;
-}
-.article-content h3 {
-  font-size: 1.1rem; font-weight: 600;
-  color: var(--navy); margin: 2rem 0 0.75rem;
-}
-.article-content ul {
-  margin: 0 0 1.6rem 1.2rem;
-}
-.article-content ul li {
-  font-size: 1.05rem; line-height: 1.75; color: #3a4a56;
-  margin-bottom: 0.5rem;
-}
-.article-pullquote {
-  margin: 2.5rem 0; padding: 1.5rem 1.8rem;
-  border-left: 3px solid var(--blue);
-  background: rgba(18,96,167,0.04);
-  border-radius: 0 12px 12px 0;
-}
-.article-pullquote p {
-  font-size: 1.1rem; font-style: italic;
-  color: var(--navy); margin: 0; line-height: 1.7;
-}
-
-/* Sidebar */
-.article-sidebar { position: sticky; top: 88px; }
-.sidebar-card {
-  background: #fff; border: 1px solid rgba(15,64,90,0.10);
-  border-radius: 16px; padding: 1.6rem 1.5rem; margin-bottom: 1.2rem;
-}
-.sidebar-label {
-  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--blue); margin-bottom: 1rem;
-}
-.sidebar-card p { font-size: 0.9rem; line-height: 1.65; color: var(--muted); margin-bottom: 1rem; }
-.related-item {
-  display: flex; flex-direction: column; gap: 0.3rem;
-  padding: 0.85rem 0; border-bottom: 1px solid rgba(15,64,90,0.07);
-  text-decoration: none; transition: padding-left 0.2s ease;
-}
-.related-item:last-child { border-bottom: none; padding-bottom: 0; }
-.related-item:hover { padding-left: 4px; }
-.related-tag { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); }
-.related-title { font-size: 0.88rem; font-weight: 500; color: var(--navy); line-height: 1.4; }
-.related-item:hover .related-title { color: var(--blue); }
-
-/* Video embed area */
 .video-placeholder {
   width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
-  background: linear-gradient(135deg, #0F405A, #1260A7 70%);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 2.5rem; position: relative; cursor: pointer;
 }
 .video-placeholder::before {
   content: ''; position: absolute; inset: 0;
   background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px);
-  background-size: 20px 20px; opacity: 0.6;
+  background-size: 22px 22px; opacity: 0.55;
 }
 .video-play-btn {
   width: 72px; height: 72px; border-radius: 50%;
@@ -155,19 +82,126 @@
   display: flex; align-items: center; justify-content: center;
   position: relative; z-index: 2;
   box-shadow: 0 12px 32px -8px rgba(0,0,0,0.45);
-  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.2s;
 }
-.video-placeholder:hover .video-play-btn { transform: scale(1.12); }
-.video-play-triangle { width: 0; height: 0; border-left: 18px solid var(--navy); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 4px; }
+.video-placeholder:hover .video-play-btn { transform: scale(1.12); background: #fff; }
+.video-play-triangle {
+  width: 0; height: 0;
+  border-left: 18px solid var(--navy);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 4px;
+}
 
-@media (max-width: 900px) {
-  .article-body-wrap { grid-template-columns: 1fr; gap: 3rem; }
+/* Article prose */
+.article-content p {
+  font-size: 1.02rem; line-height: 1.85;
+  color: #4a5f6e; margin-bottom: 1.6rem;
+}
+.article-content h2 {
+  font-size: 1.35rem; font-weight: 700;
+  color: var(--navy); margin: 2.8rem 0 1rem;
+  letter-spacing: -0.015em; line-height: 1.3;
+}
+.article-content h3 {
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--navy); margin: 2rem 0 0.7rem;
+}
+.article-content ul {
+  margin: 0 0 1.6rem 0; list-style: none;
+}
+.article-content ul li {
+  font-size: 1.02rem; line-height: 1.75; color: #4a5f6e;
+  padding: 0.45rem 0 0.45rem 1.4rem; position: relative;
+  border-bottom: 1px dashed rgba(15,64,90,0.07);
+}
+.article-content ul li:last-child { border-bottom: none; }
+.article-content ul li::before {
+  content: '';
+  position: absolute; left: 0; top: 0.95rem;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--blue); flex-shrink: 0;
+}
+.article-pullquote {
+  margin: 2.5rem 0; padding: 1.5rem 1.8rem;
+  border-left: 3px solid var(--blue);
+  background: linear-gradient(135deg, rgba(18,96,167,0.05), transparent 80%);
+  border-radius: 0 14px 14px 0;
+}
+.article-pullquote p {
+  font-size: 1.08rem; font-style: italic;
+  color: var(--navy); margin: 0; line-height: 1.7;
+}
+.article-footer-actions {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid rgba(15,64,90,0.08);
+  display: flex; gap: 0.75rem; flex-wrap: wrap;
+}
+
+/* ── Sidebar ─────────────────────────────────────────── */
+.article-sidebar { position: sticky; top: 88px; }
+.sidebar-card {
+  background: #fff;
+  border: 1px solid rgba(15,64,90,0.10);
+  border-radius: 16px; padding: 1.6rem 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.sidebar-card:hover { border-color: rgba(18,96,167,0.2); box-shadow: 0 10px 30px -14px rgba(15,64,90,0.18); }
+.sidebar-label {
+  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 1rem;
+}
+.sidebar-card p {
+  font-size: 0.88rem; line-height: 1.65; color: var(--muted); margin-bottom: 1rem;
+}
+.related-item {
+  display: flex; flex-direction: column; gap: 0.28rem;
+  padding: 0.8rem 0; border-bottom: 1px solid rgba(15,64,90,0.07);
+  text-decoration: none; transition: padding-left 0.2s ease;
+}
+.related-item:last-child { border-bottom: none; padding-bottom: 0; }
+.related-item:hover { padding-left: 4px; }
+.related-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--blue);
+}
+.related-title {
+  font-size: 0.86rem; font-weight: 500; color: var(--navy); line-height: 1.4;
+}
+.related-item:hover .related-title { color: var(--blue); }
+
+/* Newsletter form in sidebar */
+.sidebar-subscribe {
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.sidebar-subscribe input {
+  width: 100%; padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(15,64,90,0.15); border-radius: 8px;
+  font-size: 0.88rem; color: var(--navy); outline: none;
+  transition: border-color 0.2s;
+}
+.sidebar-subscribe input:focus { border-color: var(--blue); }
+.sidebar-subscribe button {
+  width: 100%; padding: 0.65rem;
+  background: var(--navy); color: #fff;
+  border: none; border-radius: 8px; cursor: pointer;
+  font-family: inherit; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: background 0.2s;
+}
+.sidebar-subscribe button:hover { background: var(--blue); }
+
+@media (max-width: 980px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
   .article-sidebar { position: static; }
 }
 @media (max-width: 560px) {
-  .article-hero-inner { padding: 3.5rem 1.2rem 4rem; }
-  .article-body-wrap { padding: 2.5rem 1.2rem 4rem; }
-  .article-content p, .article-content ul li { font-size: 0.97rem; }
+  .article-content p, .article-content ul li { font-size: 0.95rem; }
+  .article-pullquote { padding: 1.2rem 1.3rem; }
 }
 </style>
 </head>
@@ -181,7 +215,7 @@
     <li><a href="services.html">Services</a></li>
     <li><a href="expertise.html">Expertise</a></li>
     <li><a href="team.html">Team</a></li>
-    <li><a href="news.html">News</a></li>
+    <li><a href="news.html" class="active">News</a></li>
   </ul>
   <div class="nav-right">
     <span class="nav-phone">+1 (800) 000-0000</span>
@@ -191,17 +225,28 @@
 </nav>
 
 <!-- ARTICLE HERO (populated by JS) -->
-<div class="article-hero" id="articleHero">
-  <div class="article-hero-inner" id="articleHeroInner"></div>
-</div>
+<header class="page-hero" id="articleHero">
+  <div class="page-hero-inner" id="articleHeroInner"></div>
+</header>
 
 <!-- ARTICLE BODY (populated by JS) -->
-<div class="article-body-wrap" id="articleBodyWrap"></div>
+<section class="section light" id="articleSection" style="padding-top:5rem;padding-bottom:6rem;">
+  <div class="section-inner">
+    <div class="article-layout" id="articleLayout"></div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand"><img src="Logo/Excigent Logo.svg" alt="Excigent Tech Partners" /><p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p><div class="footer-contact"><a href="mailto:hello@excigent.com">hello@excigent.com</a><a href="tel:+18000000000">+1 (800) 000-0000</a></div></div>
+    <div class="footer-brand">
+      <img src="Logo/Excigent Logo.svg" alt="Excigent Tech Partners" />
+      <p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p>
+      <div class="footer-contact">
+        <a href="mailto:hello@excigent.com">hello@excigent.com</a>
+        <a href="tel:+18000000000">+1 (800) 000-0000</a>
+      </div>
+    </div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="team.html">Team</a></li><li><a href="about.html#why">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div class="footer-col"><h4>Markets</h4><ul><li><a href="expertise.html#broadband">Broadband</a></li><li><a href="expertise.html#ict">ICT</a></li><li><a href="expertise.html#security">Security</a></li><li><a href="about.html#network">Our Regions</a></li></ul></div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#channel">Channel Development</a></li><li><a href="services.html#positioning">Market Positioning</a></li><li><a href="services.html#marketing">Marketing &amp; Visibility</a></li><li><a href="services.html#process">Our Process</a></li></ul></div>
@@ -386,19 +431,19 @@ const ARTICLES = {
 };
 
 const RELATED = [
-  { id:1, type:'Article', title:'Broadband, ICT &amp; security convergence' },
-  { id:3, type:'Article', title:'Latin America &amp; Caribbean channel relationships' },
-  { id:4, type:'Newsletter', title:'Q1 Market Signal: Structured cabling demand' },
-  { id:6, type:'Market Update', title:'Security convergence: access control + video' },
-  { id:7, type:'Article', title:'The case for Optical LAN in enterprise ICT' },
+  { id:1, type:'Article',       title:'Broadband, ICT &amp; security convergence rewriting the infrastructure playbook' },
+  { id:3, type:'Article',       title:'Latin America &amp; Caribbean: where channel relationships win deals' },
+  { id:4, type:'Newsletter',    title:'Q1 Market Signal: Structured cabling demand up' },
+  { id:6, type:'Market Update', title:'Security convergence: access control and video selling together' },
+  { id:7, type:'Article',       title:'The case for Optical LAN in enterprise ICT' },
 ];
 
 function render() {
-  const id = parseInt(new URLSearchParams(window.location.search).get('id')) || 1;
-  const a = ARTICLES[id];
-  if (!a) { window.location.href = 'news.html'; return; }
+  const id  = parseInt(new URLSearchParams(window.location.search).get('id')) || 1;
+  const art = ARTICLES[id];
+  if (!art) { window.location.href = 'news.html'; return; }
 
-  document.title = a.title.replace(/&amp;/g,'&') + ' — Excigent Tech Partners';
+  document.title = art.title.replace(/&amp;/g, '&') + ' — Excigent Tech Partners';
 
   // Hero
   document.getElementById('articleHeroInner').innerHTML = `
@@ -406,54 +451,56 @@ function render() {
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
       Back to News
     </a>
-    <div class="article-tag">${a.type}</div>
-    <h1>${a.title}</h1>
+    <span class="eyebrow"><span class="eyebrow-dot"></span>${art.type}</span>
+    <h1>${art.title}</h1>
     <div class="article-meta">
-      <span class="article-meta-date">${a.date} · ${a.read}</span>
-      <span class="article-meta-author"><span class="author-dot"></span>${a.author}</span>
+      <span class="article-meta-date">${art.date} &nbsp;·&nbsp; ${art.read}</span>
+      <span class="article-meta-author"><span class="author-dot"></span>${art.author}</span>
     </div>`;
 
-  // Related (exclude current)
-  const related = RELATED.filter(r => r.id !== id).slice(0, 3);
+  // Media (thumb or video)
+  const mediaHTML = art.isVideo
+    ? `<div class="video-placeholder" style="background:${art.thumb}">
+        <div class="video-play-btn"><div class="video-play-triangle"></div></div>
+       </div>`
+    : `<div class="article-thumb">
+        <div class="article-thumb-bg" style="background:${art.thumb}"></div>
+       </div>`;
+
+  // Related (exclude current, max 3)
+  const related    = RELATED.filter(r => r.id !== id).slice(0, 3);
   const relatedHTML = related.map(r => `
     <a class="related-item" href="news-detail.html?id=${r.id}">
       <span class="related-tag">${r.type}</span>
       <span class="related-title">${r.title}</span>
     </a>`).join('');
 
-  const thumbHTML = a.isVideo
-    ? `<div class="video-placeholder" style="background:${a.thumb}">
-        <div class="video-play-btn"><div class="video-play-triangle"></div></div>
-       </div>`
-    : `<div class="article-thumb">
-        <div class="article-thumb-bg" style="background:${a.thumb}"></div>
-       </div>`;
-
-  document.getElementById('articleBodyWrap').innerHTML = `
+  // Layout
+  document.getElementById('articleLayout').innerHTML = `
     <div class="article-content reveal">
-      ${thumbHTML}
-      ${a.body}
-      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(15,64,90,0.08);display:flex;gap:0.75rem;flex-wrap:wrap">
+      ${mediaHTML}
+      ${art.body}
+      <div class="article-footer-actions">
         <a href="contact.html" class="btn-fill dark">Start a Conversation</a>
         <a href="news.html" class="btn-ghost navy">← All Articles</a>
       </div>
     </div>
     <aside class="article-sidebar">
-      <div class="sidebar-card">
+      <div class="sidebar-card reveal" style="--d:0.15s">
         <div class="sidebar-label">About Excigent</div>
         <p>We are a commercial agency helping innovative Broadband, ICT, and Security companies build channels and accelerate revenue growth across the Americas.</p>
-        <a href="about.html" class="btn-fill dark" style="font-size:0.76rem;padding:0.55rem 1.2rem">Learn More</a>
+        <a href="about.html" class="btn-fill dark" style="font-size:0.76rem;padding:0.52rem 1.2rem;width:100%;justify-content:center;">Learn More</a>
       </div>
-      <div class="sidebar-card">
+      <div class="sidebar-card reveal" style="--d:0.25s">
         <div class="sidebar-label">Related Articles</div>
         ${relatedHTML}
       </div>
-      <div class="sidebar-card">
+      <div class="sidebar-card reveal" style="--d:0.35s">
         <div class="sidebar-label">Stay Informed</div>
-        <p>Quarterly insights on Broadband, ICT &amp; Security convergence.</p>
-        <form class="subscribe-form" style="flex-direction:column;border-radius:12px;padding:0.5rem;background:rgba(15,64,90,0.06);border:1px solid rgba(15,64,90,0.14);max-width:100%">
-          <input type="email" placeholder="your@email.com" required style="color:var(--navy);padding:0.5rem 0.75rem;font-size:0.88rem" />
-          <button type="submit" style="background:var(--navy);color:#fff;border-radius:8px;margin-top:0.4rem;font-size:0.78rem">Subscribe</button>
+        <p>Quarterly insights on Broadband, ICT &amp; Security convergence across the Americas.</p>
+        <form class="sidebar-subscribe" onsubmit="return false">
+          <input type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
         </form>
       </div>
     </aside>`;

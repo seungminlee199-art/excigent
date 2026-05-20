@@ -827,6 +827,16 @@ nav {
 .subscribe-form button { font-family: inherit; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.78rem 1.6rem; background: #ffffff; color: var(--navy); border: none; border-radius: 50px; cursor: pointer; transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease; }
 .subscribe-form button:hover { background: var(--blue); color: #ffffff; transform: translateY(-1px); }
 
+/* Subscribe form with name + email fields (index.html) */
+.subscribe-form-stack { display: flex; flex-direction: column; gap: 0.75rem; max-width: 480px; margin: 0 auto; }
+.subscribe-fields { display: flex; gap: 0.6rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 50px; padding: 0.4rem 0.4rem 0.4rem 1.4rem; transition: border-color 0.3s, background 0.3s; }
+.subscribe-fields:focus-within { border-color: rgba(111,176,228,0.6); background: rgba(255,255,255,0.10); }
+.subscribe-fields input { flex: 1; border: none; background: transparent; outline: none; color: #fff; font-size: 0.9rem; font-family: inherit; color-scheme: dark; min-width: 0; }
+.subscribe-fields input::placeholder { color: rgba(200,225,245,0.60); }
+.subscribe-fields input + input { border-left: 1px solid rgba(255,255,255,0.15); padding-left: 0.8rem; }
+.subscribe-form-stack button { font-family: inherit; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.78rem 1.6rem; background: #ffffff; color: var(--navy); border: none; border-radius: 50px; cursor: pointer; transition: background 0.25s, color 0.25s, transform 0.2s; }
+.subscribe-form-stack button:hover { background: var(--blue); color: #fff; transform: translateY(-1px); }
+
 /* ══════════════════════════════════════════
    FOOTER
    ══════════════════════════════════════════ */

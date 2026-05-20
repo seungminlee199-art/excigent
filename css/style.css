@@ -822,8 +822,8 @@ nav {
 .subscribe p { color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.7; margin-bottom: 2.2rem; max-width: 540px; margin-left: auto; margin-right: auto; }
 .subscribe-form { display: flex; gap: 0.6rem; max-width: 480px; margin: 0 auto; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 50px; padding: 0.4rem 0.4rem 0.4rem 1.4rem; transition: border-color 0.3s ease, background 0.3s ease; }
 .subscribe-form:focus-within { border-color: rgba(111,176,228,0.6); background: rgba(255,255,255,0.10); }
-.subscribe-form input { flex: 1; border: none; background: transparent; outline: none; color: #ffffff; font-size: 0.94rem; font-family: inherit; }
-.subscribe-form input::placeholder { color: rgba(255,255,255,0.45); }
+.subscribe-form input { flex: 1; border: none; background: transparent; outline: none; color: #ffffff; font-size: 0.94rem; font-family: inherit; color-scheme: dark; }
+.subscribe-form input::placeholder { color: rgba(200,225,245,0.65); }
 .subscribe-form button { font-family: inherit; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.78rem 1.6rem; background: #ffffff; color: var(--navy); border: none; border-radius: 50px; cursor: pointer; transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease; }
 .subscribe-form button:hover { background: var(--blue); color: #ffffff; transform: translateY(-1px); }
 

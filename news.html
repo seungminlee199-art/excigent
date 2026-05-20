@@ -30,15 +30,15 @@
 /* Featured article (full width) */
 .news-featured {
   display: grid; grid-template-columns: 1.4fr 1fr; border-radius: 20px; overflow: hidden;
-  border: 1px solid rgba(15,64,90,0.10); margin-bottom: 1.5rem; cursor: pointer;
+  border: 1px solid rgba(0,69,105,0.10); margin-bottom: 1.5rem; cursor: pointer;
   transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.4s ease;
   background: #fff;
 }
-.news-featured:hover { transform: translateY(-4px); border-color: rgba(18,96,167,0.25); box-shadow: 0 22px 56px -28px rgba(15,64,90,0.30); }
-.featured-thumb { position: relative; min-height: 360px; background: linear-gradient(135deg, #061F2E 0%, #0F405A 50%, #1260A7 100%); overflow: hidden; }
+.news-featured:hover { transform: translateY(-4px); border-color: rgba(0,97,179,0.25); box-shadow: 0 22px 56px -28px rgba(0,69,105,0.30); }
+.featured-thumb { position: relative; min-height: 360px; background: linear-gradient(135deg, #061F2E 0%, #004569 50%, #0061B3 100%); overflow: hidden; }
 .featured-thumb::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.6; }
 .featured-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 60%, rgba(255,255,255,0.04) 100%); }
-.featured-label { position: absolute; top: 1.5rem; left: 1.5rem; z-index: 2; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; padding: 0.35rem 0.85rem; background: rgba(18,96,167,0.75); backdrop-filter: blur(8px); border-radius: 30px; }
+.featured-label { position: absolute; top: 1.5rem; left: 1.5rem; z-index: 2; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; padding: 0.35rem 0.85rem; background: rgba(0,97,179,0.75); backdrop-filter: blur(8px); border-radius: 30px; }
 .featured-body { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
 .featured-body .news-date { margin-bottom: 0.7rem; }
 .featured-body h2 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 600; line-height: 1.35; color: var(--navy); margin-bottom: 1rem; transition: color 0.25s ease; }
@@ -128,7 +128,7 @@
     <div class="news-grid-inner">
 
       <article class="news-card video reveal" data-category="video" style="--d:0.05s" onclick="location.href='news-detail.html?id=2'" role="link" tabindex="0">
-        <div class="news-thumb" style="background: linear-gradient(135deg, #0F405A, #1260A7 70%);">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #004569, #0061B3 70%);">
           <span class="news-tag">Video</span>
           <div class="video-overlay"><div class="video-play"></div></div>
         </div>
@@ -140,7 +140,7 @@
       </article>
 
       <article class="news-card reveal" data-category="article" style="--d:0.10s" onclick="location.href='news-detail.html?id=3'" role="link" tabindex="0">
-        <div class="news-thumb" style="background: linear-gradient(135deg, #0A2F45, #1260A7 70%);">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0A2F45, #0061B3 70%);">
           <span class="news-tag">Article</span>
         </div>
         <div class="news-body">
@@ -151,7 +151,7 @@
       </article>
 
       <article class="news-card reveal" data-category="newsletter" style="--d:0.15s" onclick="location.href='news-detail.html?id=4'" role="link" tabindex="0">
-        <div class="news-thumb" style="background: linear-gradient(135deg, #0A2F45, #2363A0 70%);">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0A2F45, #0061B3 70%);">
           <span class="news-tag">Newsletter</span>
         </div>
         <div class="news-body">
@@ -162,7 +162,7 @@
       </article>
 
       <article class="news-card video reveal" data-category="video" style="--d:0.20s" onclick="location.href='news-detail.html?id=5'" role="link" tabindex="0">
-        <div class="news-thumb" style="background: linear-gradient(135deg, #061F2E, #0F405A 70%);">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #061F2E, #004569 70%);">
           <span class="news-tag">Video</span>
           <div class="video-overlay"><div class="video-play"></div></div>
         </div>
@@ -174,7 +174,7 @@
       </article>
 
       <article class="news-card reveal" data-category="market-update" style="--d:0.25s" onclick="location.href='news-detail.html?id=6'" role="link" tabindex="0">
-        <div class="news-thumb" style="background: linear-gradient(135deg, #0F405A, #3B6998 70%);">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #004569, #004569 70%);">
           <span class="news-tag">Market Update</span>
         </div>
         <div class="news-body">
@@ -185,7 +185,7 @@
       </article>
 
       <article class="news-card reveal" data-category="article" style="--d:0.30s" onclick="location.href='news-detail.html?id=7'" role="link" tabindex="0">
-        <div class="news-thumb" style="background: linear-gradient(135deg, #1260A7, #0F405A 70%);">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0061B3, #004569 70%);">
           <span class="news-tag">Article</span>
         </div>
         <div class="news-body">
@@ -208,7 +208,7 @@
       <p>Quarterly insights, trade articles, and market signals from the Excigent team — focused on Broadband, ICT, and Security convergence. No fluff. Just the signals worth tracking.</p>
     </div>
     <div class="reveal" style="--d:0.1s">
-      <form class="subscribe-form" style="max-width:100%; border-radius:14px; padding:1rem 1rem 1rem 1.4rem; background:rgba(15,64,90,0.06); border:1px solid rgba(15,64,90,0.14);">
+      <form class="subscribe-form" style="max-width:100%; border-radius:14px; padding:1rem 1rem 1rem 1.4rem; background:rgba(0,69,105,0.06); border:1px solid rgba(0,69,105,0.14);">
         <input type="email" placeholder="your.name@company.com" required style="color:var(--navy);" />
         <button type="submit" style="background:var(--navy); color:#fff;">Subscribe</button>
       </form>

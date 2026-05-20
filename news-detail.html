@@ -41,7 +41,7 @@
 }
 .author-dot {
   width: 7px; height: 7px; border-radius: 50%;
-  background: #6FB0E4; flex-shrink: 0;
+  background: #B8DBFF; flex-shrink: 0;
 }
 
 /* ── Article body layout ─────────────────────────────── */
@@ -113,7 +113,7 @@
 .article-content ul li {
   font-size: 1.02rem; line-height: 1.75; color: #4a5f6e;
   padding: 0.45rem 0 0.45rem 1.4rem; position: relative;
-  border-bottom: 1px dashed rgba(15,64,90,0.07);
+  border-bottom: 1px dashed rgba(0,69,105,0.07);
 }
 .article-content ul li:last-child { border-bottom: none; }
 .article-content ul li::before {
@@ -125,7 +125,7 @@
 .article-pullquote {
   margin: 2.5rem 0; padding: 1.5rem 1.8rem;
   border-left: 3px solid var(--blue);
-  background: linear-gradient(135deg, rgba(18,96,167,0.05), transparent 80%);
+  background: linear-gradient(135deg, rgba(0,97,179,0.05), transparent 80%);
   border-radius: 0 14px 14px 0;
 }
 .article-pullquote p {
@@ -134,7 +134,7 @@
 }
 .article-footer-actions {
   margin-top: 3rem; padding-top: 2rem;
-  border-top: 1px solid rgba(15,64,90,0.08);
+  border-top: 1px solid rgba(0,69,105,0.08);
   display: flex; gap: 0.75rem; flex-wrap: wrap;
 }
 
@@ -142,12 +142,12 @@
 .article-sidebar { position: sticky; top: 88px; }
 .sidebar-card {
   background: #fff;
-  border: 1px solid rgba(15,64,90,0.10);
+  border: 1px solid rgba(0,69,105,0.10);
   border-radius: 16px; padding: 1.6rem 1.5rem;
   margin-bottom: 1.2rem;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.sidebar-card:hover { border-color: rgba(18,96,167,0.2); box-shadow: 0 10px 30px -14px rgba(15,64,90,0.18); }
+.sidebar-card:hover { border-color: rgba(0,97,179,0.2); box-shadow: 0 10px 30px -14px rgba(0,69,105,0.18); }
 .sidebar-label {
   font-size: 0.63rem; font-weight: 700; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--blue); margin-bottom: 1rem;
@@ -157,7 +157,7 @@
 }
 .related-item {
   display: flex; flex-direction: column; gap: 0.28rem;
-  padding: 0.8rem 0; border-bottom: 1px solid rgba(15,64,90,0.07);
+  padding: 0.8rem 0; border-bottom: 1px solid rgba(0,69,105,0.07);
   text-decoration: none; transition: padding-left 0.2s ease;
 }
 .related-item:last-child { border-bottom: none; padding-bottom: 0; }
@@ -177,7 +177,7 @@
 }
 .sidebar-subscribe input {
   width: 100%; padding: 0.6rem 0.85rem;
-  border: 1px solid rgba(15,64,90,0.15); border-radius: 8px;
+  border: 1px solid rgba(0,69,105,0.15); border-radius: 8px;
   font-size: 0.88rem; color: var(--navy); outline: none;
   transition: border-color 0.2s;
 }
@@ -267,7 +267,7 @@ const ARTICLES = {
     type: 'Article', date: 'May 12, 2026', read: '6 min read',
     author: 'Excigent Editorial',
     title: 'Why broadband, ICT &amp; security convergence is rewriting the infrastructure playbook',
-    thumb: 'linear-gradient(135deg, #061F2E 0%, #0F405A 50%, #1260A7 100%)',
+    thumb: 'linear-gradient(135deg, #061F2E 0%, #004569 50%, #0061B3 100%)',
     isVideo: false,
     body: `
       <p>The future of infrastructure isn't three silos — it's an integrated system. Broadband delivers connectivity. ICT structures and manages it. Security protects it. When these three disciplines align, they produce environments that are smarter, safer, and far more competitive than any single-discipline approach.</p>
@@ -293,7 +293,7 @@ const ARTICLES = {
     type: 'Video', date: 'April 28, 2026', read: '4 min watch',
     author: 'Excigent Team',
     title: 'Inside our market model: from assessment to revenue growth',
-    thumb: 'linear-gradient(135deg, #0F405A, #1260A7 70%)',
+    thumb: 'linear-gradient(135deg, #004569, #0061B3 70%)',
     isVideo: true,
     body: `
       <p>In this video, the Excigent team walks through the six-stage commercial framework we use with every principal we represent — from initial market assessment through to sustainable revenue growth.</p>
@@ -315,7 +315,7 @@ const ARTICLES = {
     type: 'Article', date: 'April 15, 2026', read: '3 min read',
     author: 'Robert Lopez',
     title: 'Latin America &amp; Caribbean: where channel relationships still win deals',
-    thumb: 'linear-gradient(135deg, #0A2F45, #1260A7 70%)',
+    thumb: 'linear-gradient(135deg, #0A2F45, #0061B3 70%)',
     isVideo: false,
     body: `
       <p>In North American enterprise sales, the RFP process is formalized, procurement teams are structured, and decisions are increasingly data-driven. In Latin America and the Caribbean, relationships still determine outcomes — often more than price, specification, or brand recognition.</p>
@@ -339,7 +339,7 @@ const ARTICLES = {
     type: 'Newsletter', date: 'March 30, 2026', read: '5 min read',
     author: 'Excigent Editorial',
     title: 'Q1 Market Signal: Structured cabling demand up as enterprise builds accelerate',
-    thumb: 'linear-gradient(135deg, #0A2F45, #2363A0 70%)',
+    thumb: 'linear-gradient(135deg, #0A2F45, #0061B3 70%)',
     isVideo: false,
     body: `
       <p>Q1 2026 confirmed a trend we've been tracking since late last year: structured cabling is no longer the quiet baseline of enterprise ICT — it's an active growth category, driven by the intersection of AI infrastructure buildouts, hybrid work consolidation, and the continued migration from copper to fiber in the enterprise LAN.</p>
@@ -361,7 +361,7 @@ const ARTICLES = {
     type: 'Video', date: 'March 12, 2026', read: '7 min watch',
     author: 'Robert Lopez',
     title: 'FTTH deployment trends in 2026: what ISPs need from their supply chain',
-    thumb: 'linear-gradient(135deg, #061F2E, #0F405A 70%)',
+    thumb: 'linear-gradient(135deg, #061F2E, #004569 70%)',
     isVideo: true,
     body: `
       <p>Robert Lopez breaks down the infrastructure patterns driving broadband buildouts in 2026, and what they mean for principals supplying into the ISP and carrier market across the Americas.</p>
@@ -387,7 +387,7 @@ const ARTICLES = {
     type: 'Market Update', date: 'February 20, 2026', read: '4 min read',
     author: 'Excigent Editorial',
     title: 'Security convergence: why access control and video are selling together',
-    thumb: 'linear-gradient(135deg, #0F405A, #3B6998 70%)',
+    thumb: 'linear-gradient(135deg, #004569, #004569 70%)',
     isVideo: false,
     body: `
       <p>The physical security market is undergoing a structural shift that's reshaping how integrators specify, how buyers procure, and how principals need to position their solutions. Access control and video surveillance — once distinct categories sold by different teams to different buyers — are increasingly specified, sold, and integrated as a unified system.</p>
@@ -409,7 +409,7 @@ const ARTICLES = {
     type: 'Article', date: 'January 28, 2026', read: '4 min read',
     author: 'Paul Weintraub',
     title: 'The case for Optical LAN: why POL is gaining traction in enterprise ICT',
-    thumb: 'linear-gradient(135deg, #1260A7, #0F405A 70%)',
+    thumb: 'linear-gradient(135deg, #0061B3, #004569 70%)',
     isVideo: false,
     body: `
       <p>Passive Optical LAN has been discussed as a potential enterprise networking alternative for years. In 2026, the conversation has shifted: POL is no longer a niche consideration for specialized facilities — it's a mainstream option that enterprise ICT decision-makers are actively evaluating across healthcare, education, government, and commercial real estate.</p>

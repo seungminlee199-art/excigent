@@ -324,7 +324,7 @@ function doSearch(q) {
   }
 
   grid.innerHTML = `<div class="results-grid">${hits.map(d => `
-    <a class="result-card reveal" href="${d.url}">
+    <a class="result-card" href="${d.url}">
       <div class="result-cat">${esc(d.cat)}</div>
       <div class="result-title">${esc(d.title)}</div>
       <div style="font-size:0.86rem;line-height:1.6;color:var(--muted);flex:1">${esc(d.desc)}</div>

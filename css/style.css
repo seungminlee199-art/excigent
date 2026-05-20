@@ -1,13 +1,16 @@
 /* ============================================================
    EXCIGENT TECH PARTNERS — Shared Stylesheet
    Brand Guide (Slide 3): Deep Navy #004569 · Primary Blue #0061B3
-   Light Blue #B8DBFF · Soft Tint #EAF3FB · Font: Aptos
+   Light Blue #B8DBFF · Soft Tint #EAF3FB
+   Font: Plus Jakarta Sans (cross-platform Aptos visual equivalent)
    ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 button, input, select, textarea {
-  font-family: 'Aptos', 'Calibri', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Aptos', 'Calibri', system-ui, sans-serif;
 }
 
 :root {
@@ -24,7 +27,7 @@ button, input, select, textarea {
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Aptos', 'Calibri', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Aptos', 'Calibri', system-ui, sans-serif;
   background: #fff;
   color: var(--navy);
   -webkit-font-smoothing: antialiased;

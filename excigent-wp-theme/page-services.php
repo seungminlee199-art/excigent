@@ -68,7 +68,7 @@ $default_services = [
 <header class="page-hero">
   <div class="page-hero-inner">
     <span class="eyebrow"><span class="eyebrow-dot"></span><?php echo esc_html( _sf('hero_eyebrow','What We Offer') ); ?></span>
-    <h1><?php echo wp_kses_post( _sf('hero_heading','Commercial &amp; <strong>market development</strong>,<br>delivered as a partnership.') ); ?></h1>
+    <h1><?php echo excigent_h( 'hero_heading', 'Commercial &amp; <strong>market development</strong>,<br>delivered as a partnership.' ); ?></h1>
     <p><?php echo esc_html( _sf('hero_subtext','We help principals establish channels, position solutions effectively, and expand visibility through disciplined commercial and market development support across the Americas.') ); ?></p>
     <div class="page-hero-actions">
       <?php excigent_link('hero_btn_primary',   home_url('/contact/'),    'Start a Conversation', 'btn-fill'); ?>
@@ -85,7 +85,7 @@ foreach ( $svc_data as $svc ) :
   $cls     = esc_attr($svc['section_class'] ?? 'light');
   $flip    = !empty($svc['section_flip']);
   $eyebrow = esc_html($svc['eyebrow'] ?? $svc['svc_eyebrow'] ?? '');
-  $heading = wp_kses_post($svc['heading'] ?? $svc['svc_heading'] ?? '');
+  $heading = excigent_strip_p( wp_kses_post($svc['heading'] ?? $svc['svc_heading'] ?? '') );
   $body    = esc_html($svc['body'] ?? $svc['svc_body'] ?? '');
   $cta_url = function_exists('get_field') && !empty($svc['svc_cta']) ? esc_url($svc['svc_cta']['url']) : esc_url(home_url('/contact/'));
   $cta_lbl = esc_html($svc['cta_label'] ?? 'Discuss This Service');
@@ -196,7 +196,7 @@ foreach ( $svc_data as $svc ) :
   'subtext'   => "Let's talk about how Excigent can help your company build channels and grow revenue across the Americas.",
   'cta_links' => [
     ['url' => home_url('/contact/'),   'label' => 'Start a Conversation', 'class' => 'btn-fill', 'style' => 'background:#fff;color:#004569;'],
-    ['url' => home_url('/expertise/'), 'label' => 'View Our Expertise',   'class' => 'btn-ghost'],
+    ['url' => home_url('/services/'),  'label' => 'View Our Services',    'class' => 'btn-ghost'],
   ],
 ]); ?>
 

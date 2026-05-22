@@ -80,11 +80,13 @@ function _ef( $k, $fb = '' ) { return function_exists( 'get_field' ) ? ( get_fie
 @keyframes scrollHintIn{from{opacity:0}to{opacity:.25}}
 nav{animation:navSlideDown .8s cubic-bezier(.22,1,.36,1) 3.0s both}
 @media (prefers-reduced-motion:reduce){nav,.globe-visual,.globe-glow,.conn-svg,.eyebrow,.headline h1,.headline p,.hero-btns{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}#btn-broadband{animation:none!important;opacity:1!important;transform:translateX(-50%)!important}#btn-ict,#btn-security{animation:none!important;opacity:1!important}}
-@media (max-width:768px){.globe-stage{width:320px;height:320px}.globe-glow{width:380px;height:380px}.svc.bl{left:-60px}.svc.br{right:-60px}}
+@media (max-width:768px){.globe-stage{width:300px;height:300px}.globe-glow{width:340px;height:340px}.svc.bl{left:-50px}.svc.br{right:-50px}.headline{padding:0 1.2rem}.hero-btns{flex-direction:column;align-items:center;gap:.6rem}.hero-btns a{width:100%;max-width:300px;justify-content:center}}
+@media (max-width:480px){.globe-stage{width:240px;height:240px}.globe-glow{width:280px;height:280px}.svc{font-size:.72rem;padding:.4rem .8rem}.svc.bl{left:-40px}.svc.br{right:-40px}.svc-hint{display:none}}
 /* Events carousel */
 .events-carousel{position:relative;overflow:hidden}
 .events-track{display:flex;gap:1.4rem;transition:transform .45s cubic-bezier(.22,1,.36,1)}
-.ev-card{flex:0 0 calc(33.333% - .94rem);background:#fff;border:1px solid rgba(0,69,105,.10);border-radius:18px;overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease}
+.ev-card{background:#fff;border:1px solid rgba(0,69,105,.10);border-radius:18px;overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease}
+.events-track .ev-card{flex:0 0 calc(33.333% - .94rem)}
 .ev-card:hover{transform:translateY(-5px);border-color:rgba(0,97,179,.25);box-shadow:0 18px 48px -20px rgba(0,69,105,.28)}
 .ev-card-top{padding:1.4rem 1.5rem;position:relative;overflow:hidden}
 .ev-card-top::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.08) 1px,transparent 1px);background-size:18px 18px}
@@ -102,8 +104,8 @@ nav{animation:navSlideDown .8s cubic-bezier(.22,1,.36,1) 3.0s both}
 .carousel-btn svg{width:18px;height:18px}
 .carousel-btn:hover{background:var(--navy);border-color:var(--navy)}
 .carousel-btn:hover svg{stroke:#fff}
-@media (max-width:980px){.ev-card{flex:0 0 calc(50% - .7rem)}}
-@media (max-width:600px){.ev-card{flex:0 0 100%}}
+@media (max-width:980px){.events-track .ev-card{flex:0 0 calc(50% - .7rem)}}
+@media (max-width:600px){.events-track .ev-card{flex:0 0 100%}}
 /* Hero search */
 .hero-search{position:absolute;top:40%;right:3.5rem;transform:translateY(-50%);z-index:40;height:60px;width:60px;display:flex;align-items:center;padding:0;background:rgba(255,255,255,.85);border:1px solid rgba(0,69,105,.14);border-radius:34px;box-shadow:0 1px 3px rgba(0,69,105,.06),0 10px 28px -10px rgba(0,69,105,.28);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);cursor:pointer;overflow:hidden;opacity:0;transition:width .55s cubic-bezier(.22,1,.36,1),left .55s cubic-bezier(.22,1,.36,1),background .3s ease,box-shadow .3s ease,border-color .3s ease;animation:fadeIn .6s ease-out 4.9s both,heroSearchPulse 2.6s ease-in-out 5.6s infinite}
 @keyframes heroSearchPulse{0%,100%{box-shadow:0 1px 3px rgba(0,69,105,.06),0 10px 28px -10px rgba(0,69,105,.28),0 0 0 0 rgba(0,97,179,.55)}60%{box-shadow:0 1px 3px rgba(0,69,105,.06),0 10px 28px -10px rgba(0,69,105,.28),0 0 0 14px rgba(0,97,179,0)}}
@@ -122,6 +124,7 @@ nav{animation:navSlideDown .8s cubic-bezier(.22,1,.36,1) 3.0s both}
 .hero-search-results{position:absolute;right:3.5rem;width:440px;z-index:39;background:rgba(255,255,255,.98);border:1px solid rgba(0,69,105,.10);border-radius:18px;padding:10px 8px 12px;box-shadow:0 1px 2px rgba(0,69,105,.06),0 8px 20px -4px rgba(0,69,105,.14),0 28px 60px -16px rgba(0,69,105,.24);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .22s ease,transform .22s ease;max-height:60vh;overflow-y:auto}
 .hero-search-results.visible{opacity:1;transform:translateY(0);pointer-events:auto;transition:opacity .32s ease .22s,transform .32s ease .22s}
 .hero-search-section{display:flex;align-items:center;gap:6px;padding:8px 14px 6px;font-size:.62rem;font-weight:600;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+.hero-search-section svg{width:13px;height:13px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hero-search-item{display:flex;align-items:center;gap:12px;width:100%;padding:9px 12px;border:none;background:transparent;border-radius:12px;font-family:inherit;font-size:.86rem;color:var(--navy);text-align:left;cursor:pointer;transition:background .18s ease,color .18s ease}
 .hero-search-item:hover{background:rgba(0,97,179,.08);color:var(--blue)}
 .hero-search-item-icon{width:30px;height:30px;border-radius:50%;background:rgba(0,69,105,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--soft);transition:background .18s ease,color .18s ease}
@@ -202,7 +205,7 @@ nav{animation:navSlideDown .8s cubic-bezier(.22,1,.36,1) 3.0s both}
     </div>
 
     <div class="headline">
-      <h1><?php echo wp_kses_post( _ef( 'hero_heading', 'Where <strong>Broadband, ICT</strong> &amp; Security Converge' ) ); ?></h1>
+      <h1><?php echo excigent_h( 'hero_heading', 'Where <strong>Broadband, ICT</strong> &amp; Security Converge' ); ?></h1>
       <p><?php echo esc_html( _ef( 'hero_subtext', 'Helping innovative companies build channels, strengthen market presence, and accelerate revenue growth across North America, Latin America & the Caribbean.' ) ); ?></p>
       <div class="hero-btns">
         <?php
@@ -231,7 +234,7 @@ $events_heading = _ef('events_section_heading', 'Upcoming <strong>Events</strong
 $events_link    = function_exists('get_field') ? get_field('events_view_all_link') : null;
 $events_url     = $events_link ? esc_url($events_link['url']) : esc_url(home_url('/media/#events'));
 
-// Try ACF repeater first, else fall back to Events CPT
+// Primary source: Events CPT. ACF repeater is fallback only.
 $acf_events = function_exists('get_field') ? get_field('events_carousel') : null;
 ?>
 <section class="section light" id="events" style="padding-top:4rem;padding-bottom:4rem;">
@@ -245,15 +248,49 @@ $acf_events = function_exists('get_field') ? get_field('events_carousel') : null
     </div>
     <div class="events-carousel">
       <div class="events-track" id="eventsTrack">
-        <?php if ($acf_events) :
-          foreach ($acf_events as $ev) :
-            $month  = esc_html($ev['month'] ?? '');
-            $day    = esc_html($ev['day'] ?? '');
-            $type   = esc_html($ev['type'] ?? 'Trade Show');
-            $name   = esc_html($ev['name'] ?? '');
-            $loc    = esc_html($ev['location'] ?? '');
-            $tag    = esc_html($ev['tag'] ?? '');
-            $bg     = esc_attr($ev['gradient'] ?? 'linear-gradient(135deg,#061F2E,#004569 60%,#0061B3)');
+        <?php
+        /* ── Tier 1: Events CPT (primary) ── */
+        $ev_cpt = new WP_Query([
+          'post_type'      => 'event',
+          'posts_per_page' => 8,
+          'orderby'        => 'meta_value',
+          'meta_key'       => 'event_date',
+          'order'          => 'ASC',
+          'post_status'    => 'publish',
+        ]);
+        if ( $ev_cpt->have_posts() ) :
+          while ( $ev_cpt->have_posts() ) : $ev_cpt->the_post();
+            $ev_date = function_exists('get_field') ? get_field('event_date') : '';
+            $ev_loc  = esc_html( function_exists('get_field') ? get_field('event_location') : '' );
+            $ev_type = esc_html( function_exists('get_field') ? ( get_field('event_type') ?: 'Trade Show' ) : 'Trade Show' );
+            $ev_tag  = esc_html( function_exists('get_field') ? get_field('event_tag') : '' );
+            $ev_grad = esc_attr( function_exists('get_field') ? ( get_field('event_gradient') ?: 'linear-gradient(135deg,#061F2E,#004569 60%,#0061B3)' ) : 'linear-gradient(135deg,#061F2E,#004569 60%,#0061B3)' );
+            $month   = $ev_date ? date( 'M', strtotime( $ev_date ) ) : '';
+            $day     = $ev_date ? date( 'd', strtotime( $ev_date ) ) : '';
+        ?>
+        <div class="ev-card">
+          <div class="ev-card-top" style="background:<?php echo $ev_grad; ?>">
+            <div class="ev-badge"><span class="ev-month"><?php echo esc_html($month); ?></span><span class="ev-day"><?php echo esc_html($day); ?></span></div>
+          </div>
+          <div class="ev-card-body">
+            <span class="ev-type"><?php echo $ev_type; ?></span>
+            <h4 class="ev-name"><?php the_title(); ?></h4>
+            <p class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><?php echo $ev_loc; ?></p>
+            <?php if ( $ev_tag ) : ?><span class="ev-tag"><?php echo $ev_tag; ?></span><?php endif; ?>
+          </div>
+        </div>
+        <?php endwhile; wp_reset_postdata();
+
+        /* ── Tier 2: ACF repeater fallback ── */
+        elseif ( $acf_events ) :
+          foreach ( $acf_events as $ev ) :
+            $month = esc_html( $ev['month'] ?? '' );
+            $day   = esc_html( $ev['day'] ?? '' );
+            $type  = esc_html( $ev['type'] ?? 'Trade Show' );
+            $name  = esc_html( $ev['name'] ?? '' );
+            $loc   = esc_html( $ev['location'] ?? '' );
+            $tag   = esc_html( $ev['tag'] ?? '' );
+            $bg    = esc_attr( $ev['gradient'] ?? 'linear-gradient(135deg,#061F2E,#004569 60%,#0061B3)' );
         ?>
         <div class="ev-card">
           <div class="ev-card-top" style="background:<?php echo $bg; ?>">
@@ -263,34 +300,13 @@ $acf_events = function_exists('get_field') ? get_field('events_carousel') : null
             <span class="ev-type"><?php echo $type; ?></span>
             <h4 class="ev-name"><?php echo $name; ?></h4>
             <p class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><?php echo $loc; ?></p>
-            <span class="ev-tag"><?php echo $tag; ?></span>
+            <?php if ( $tag ) : ?><span class="ev-tag"><?php echo $tag; ?></span><?php endif; ?>
           </div>
         </div>
         <?php endforeach;
-        else : /* Fallback: query Events CPT */
-          $ev_query = new WP_Query(['post_type'=>'event','posts_per_page'=>4,'orderby'=>'meta_value','meta_key'=>'event_date','order'=>'ASC']);
-          if ($ev_query->have_posts()) :
-            while ($ev_query->have_posts()) : $ev_query->the_post();
-              $ev_date = function_exists('get_field') ? get_field('event_date') : '';
-              $ev_loc  = function_exists('get_field') ? esc_html(get_field('event_location')) : '';
-              $ev_type = function_exists('get_field') ? esc_html(get_field('event_type')) : 'Trade Show';
-              $ev_tag  = function_exists('get_field') ? esc_html(get_field('event_tag')) : '';
-              $month   = $ev_date ? date('M', strtotime($ev_date)) : '';
-              $day     = $ev_date ? date('d', strtotime($ev_date)) : '';
-        ?>
-        <div class="ev-card">
-          <div class="ev-card-top" style="background:linear-gradient(135deg,#061F2E,#004569 60%,#0061B3)">
-            <div class="ev-badge"><span class="ev-month"><?php echo $month; ?></span><span class="ev-day"><?php echo $day; ?></span></div>
-          </div>
-          <div class="ev-card-body">
-            <span class="ev-type"><?php echo $ev_type; ?></span>
-            <h4 class="ev-name"><?php the_title(); ?></h4>
-            <p class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><?php echo $ev_loc; ?></p>
-            <?php if ($ev_tag) : ?><span class="ev-tag"><?php echo $ev_tag; ?></span><?php endif; ?>
-          </div>
-        </div>
-        <?php endwhile; wp_reset_postdata();
-          else : /* Static fallback */ ?>
+
+        /* ── Tier 3: Static fallback ── */
+        else : ?>
         <div class="ev-card">
           <div class="ev-card-top" style="background:linear-gradient(135deg,#061F2E,#004569 60%,#0061B3)">
             <div class="ev-badge"><span class="ev-month">Jun</span><span class="ev-day">14</span></div>
@@ -335,7 +351,7 @@ $acf_events = function_exists('get_field') ? get_field('events_carousel') : null
             <span class="ev-tag">Security &amp; Access Control</span>
           </div>
         </div>
-        <?php endif; endif; ?>
+        <?php endif; ?>
       </div><!-- .events-track -->
       <div class="carousel-nav">
         <button class="carousel-btn" id="evPrev" aria-label="Previous">
@@ -355,7 +371,7 @@ $acf_events = function_exists('get_field') ? get_field('events_carousel') : null
     <div class="about-grid">
       <div class="about-copy">
         <span class="section-eyebrow reveal" style="--d:0s"><?php echo esc_html( _ef('about_eyebrow','About Excigent') ); ?></span>
-        <h2 class="section-title reveal" style="--d:0.05s"><?php echo wp_kses_post( _ef('about_heading','Built on <strong>decades</strong> of industry leadership across broadband, ICT &amp; security.') ); ?></h2>
+        <h2 class="section-title reveal" style="--d:0.05s"><?php echo excigent_h( 'about_heading', 'Built on <strong>decades</strong> of industry leadership across broadband, ICT &amp; security.' ); ?></h2>
         <p class="reveal" style="--d:0.1s"><?php echo esc_html( _ef('about_para1','Excigent Tech Partners is a commercial agency and market development partner helping innovative companies expand across North America, Latin America, and the Caribbean.') ); ?></p>
         <p class="reveal" style="--d:0.18s"><?php echo esc_html( _ef('about_para2','We turn strong potential into market traction and revenue growth — through strategy, channel development, market positioning, and disciplined commercial execution.') ); ?></p>
         <div class="reveal" style="--d:0.24s;margin-top:1.8rem;">
@@ -415,7 +431,7 @@ $acf_events = function_exists('get_field') ? get_field('events_carousel') : null
       </div>
     </div>
     <div style="text-align:center;margin-top:3rem;">
-      <?php excigent_link('convergence_cta', home_url('/expertise/'), 'View Our Expertise', 'btn-fill dark'); ?>
+      <?php excigent_link('convergence_cta', home_url('/services/'), 'View Our Services', 'btn-fill dark'); ?>
     </div>
   </div>
 </section>
@@ -441,6 +457,85 @@ $acf_events = function_exists('get_field') ? get_field('events_carousel') : null
     <div style="text-align:center;margin-top:3rem;">
       <?php excigent_link('process_cta', home_url('/services/'), 'See Our Services', 'btn-fill'); ?>
     </div>
+  </div>
+</section>
+
+<!-- ══ NEWS SECTION ══ -->
+<?php
+$news_query = new WP_Query([
+  'post_type'      => 'news',
+  'posts_per_page' => 3,
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+  'post_status'    => 'publish',
+]);
+$news_page_url = home_url('/news-events/');
+?>
+<section class="section light" id="news">
+  <div class="section-inner">
+    <div class="news-head">
+      <div>
+        <span class="section-eyebrow reveal" style="--d:0s"><?php echo esc_html( _ef('news_eyebrow','Industry Insights') ); ?></span>
+        <h2 class="section-title reveal" style="--d:0.06s"><?php echo excigent_h('news_heading','Industry <strong>perspectives</strong>,<br>delivered from the inside.'); ?></h2>
+      </div>
+      <a href="<?php echo esc_url($news_page_url); ?>" class="news-link reveal" style="--d:0.12s">View all insights &#8594;</a>
+    </div>
+
+    <?php if ( $news_query->have_posts() ) : ?>
+    <div class="news-grid">
+      <?php $ni = 0; while ( $news_query->have_posts() ) : $news_query->the_post();
+        $tag        = get_field('news_tag')        ?: 'Article';
+        $read_time  = get_field('news_read_time')  ?: '';
+        $excerpt    = get_field('news_excerpt')    ?: get_the_excerpt();
+        $is_feat    = get_field('news_is_featured') || $ni === 0;
+        $is_video   = get_field('news_is_video');
+        $thumb      = get_the_post_thumbnail_url(null,'large');
+        $delay      = round(0.05 + $ni * 0.10, 2);
+        $thumb_cls  = $is_feat ? 'featured' : ($is_video ? 'video' : '');
+      ?>
+      <a href="<?php the_permalink(); ?>" class="news-card reveal<?php echo $is_video ? ' video' : ''; ?>" style="--d:<?php echo $delay; ?>s">
+        <div class="news-thumb <?php echo esc_attr($thumb_cls); ?>">
+          <?php if ($thumb) : ?><img src="<?php echo esc_url($thumb); ?>" alt="<?php the_title_attribute(); ?>" /><?php endif; ?>
+          <span class="news-tag"><?php echo esc_html($tag); ?></span>
+          <?php if ($is_video) : ?><span class="play-icon"></span><?php endif; ?>
+        </div>
+        <div class="news-body">
+          <div class="news-date"><?php echo get_the_date('M j, Y'); ?><?php if($read_time) echo ' &middot; ' . esc_html($read_time); ?></div>
+          <h3><?php the_title(); ?></h3>
+          <?php if ($excerpt) : ?><p><?php echo esc_html($excerpt); ?></p><?php endif; ?>
+        </div>
+      </a>
+      <?php $ni++; endwhile; wp_reset_postdata(); ?>
+    </div>
+
+    <?php else : ?>
+    <div class="news-grid">
+      <a href="<?php echo esc_url($news_page_url); ?>" class="news-card reveal" style="--d:0.05s">
+        <div class="news-thumb featured"><span class="news-tag">Featured Article</span></div>
+        <div class="news-body">
+          <div class="news-date">Coming Soon</div>
+          <h3>Industry perspectives from the inside</h3>
+          <p>Trade articles, newsletters, and market intelligence from the Excigent team — coming soon.</p>
+        </div>
+      </a>
+      <a href="<?php echo esc_url($news_page_url); ?>" class="news-card reveal" style="--d:0.15s">
+        <div class="news-thumb"><span class="news-tag">Newsletter</span></div>
+        <div class="news-body">
+          <div class="news-date">Coming Soon</div>
+          <h3>Quarterly market intelligence</h3>
+          <p>Broadband, ICT, and Security convergence signals — delivered straight to your inbox.</p>
+        </div>
+      </a>
+      <a href="<?php echo esc_url($news_page_url); ?>" class="news-card reveal" style="--d:0.25s">
+        <div class="news-thumb"><span class="news-tag">Trade Article</span></div>
+        <div class="news-body">
+          <div class="news-date">Coming Soon</div>
+          <h3>Channel relationships that move markets</h3>
+          <p>Notes from the field on what really drives growth for principals expanding across the Americas.</p>
+        </div>
+      </a>
+    </div>
+    <?php endif; ?>
   </div>
 </section>
 

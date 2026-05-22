@@ -61,7 +61,7 @@ get_header(); ?>
       <!-- INFO COL -->
       <div class="contact-info-col">
         <h2 class="contact-info-heading reveal"><?php echo esc_html( function_exists('get_field') ? (get_field('contact_col_heading') ?: 'Get in touch') : 'Get in touch' ); ?></h2>
-        <p class="contact-info-sub reveal"><?php echo esc_html( function_exists('get_field') ? (get_field('contact_col_subtext') ?: 'We're always open to conversations with principals, channel partners, and industry professionals.') : 'We're always open to conversations with principals, channel partners, and industry professionals.' ); ?></p>
+        <p class="contact-info-sub reveal"><?php echo esc_html( function_exists('get_field') ? (get_field('contact_col_subtext') ?: 'We\'re always open to conversations with principals, channel partners, and industry professionals.') : 'We\'re always open to conversations with principals, channel partners, and industry professionals.' ); ?></p>
 
         <div class="contact-cards">
           <?php

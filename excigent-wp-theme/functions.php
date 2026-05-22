@@ -5,6 +5,14 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+// Redirect /expertise/* → /services/ (page was renamed; also handles old cached links)
+add_action( 'template_redirect', function() {
+    if ( strpos( $_SERVER['REQUEST_URI'], '/expertise' ) !== false ) {
+        wp_redirect( home_url( '/services/' ), 301 );
+        exit;
+    }
+} );
+
 /* ══════════════════════════════════════
    1. THEME SETUP
    ══════════════════════════════════════ */
@@ -78,6 +86,24 @@ function excigent_preconnect_fonts( $output, $item, $handle ) {
 }
 add_filter( 'style_loader_tag', 'excigent_preconnect_fonts', 10, 3 );
 
+/*
+ * Remove WP's injected block-library + global styles to prevent font conflicts.
+ * WP 6.x injects global styles via wp_footer() after body inline <style> blocks,
+ * using selectors like .wp-site-blocks h1 that override theme typography.
+ */
+remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+remove_action( 'wp_footer',          'wp_enqueue_global_styles', 1 );
+
+function excigent_dequeue_wp_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'global-styles' );
+    wp_deregister_style( 'global-styles' );
+    wp_dequeue_style( 'classic-theme-styles' );
+    wp_deregister_style( 'classic-theme-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'excigent_dequeue_wp_styles', PHP_INT_MAX );
+
 /* ══════════════════════════════════════
    3. ACF — REGISTER FIELD GROUPS
    ══════════════════════════════════════ */
@@ -119,12 +145,47 @@ function excigent_register_cpts() {
             'add_new_item'  => __( 'Add New Event', 'excigent' ),
         ],
     ] );
+
+    register_post_type( 'news', [
+        'label'        => __( 'News', 'excigent' ),
+        'public'       => true,
+        'show_in_rest' => true,
+        'menu_icon'    => 'dashicons-media-document',
+        'supports'     => [ 'title', 'thumbnail', 'editor' ],
+        'rewrite'      => [ 'slug' => 'news' ],
+        'has_archive'  => false,
+        'labels'       => [
+            'name'          => __( 'News', 'excigent' ),
+            'singular_name' => __( 'News Article', 'excigent' ),
+            'add_new_item'  => __( 'Add New Article', 'excigent' ),
+            'edit_item'     => __( 'Edit Article', 'excigent' ),
+        ],
+    ] );
 }
 add_action( 'init', 'excigent_register_cpts' );
 
 /* ══════════════════════════════════════
    5. HELPER FUNCTIONS
    ══════════════════════════════════════ */
+
+/**
+ * Strip the single wrapping <p> tag that ACF wysiwyg fields add automatically.
+ * Must be called before echoing wysiwyg content inside <h1>–<h6> tags.
+ */
+function excigent_strip_p( $str ) {
+    return trim( preg_replace( '#^\s*<p>(.*?)</p>\s*$#s', '$1', trim( $str ) ) );
+}
+
+/**
+ * Get ACF wysiwyg heading field, strip wrapping <p>, return safe HTML.
+ * Use this instead of wp_kses_post( get_field() ) when output goes inside a heading tag.
+ */
+function excigent_h( $field, $fallback = '', $post_id = false ) {
+    if ( ! function_exists( 'get_field' ) ) return wp_kses_post( excigent_strip_p( $fallback ) );
+    $val = $post_id ? get_field( $field, $post_id ) : get_field( $field );
+    $val = $val ?: $fallback;
+    return wp_kses_post( excigent_strip_p( $val ) );
+}
 
 /**
  * Output ACF field safely, with optional fallback.

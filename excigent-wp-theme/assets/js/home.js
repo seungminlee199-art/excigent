@@ -137,12 +137,12 @@ function hideService() { document.querySelectorAll('.svc').forEach(b => b.classL
 /* ── Hero search ── */
 (function initHeroSearch() {
   const SEARCH_DATA = [
-    { title:'Broadband',              cat:'Expertise', url:'/expertise/#broadband' },
-    { title:'ICT Solutions',          cat:'Expertise', url:'/expertise/#ict' },
-    { title:'Security',               cat:'Expertise', url:'/expertise/#security' },
-    { title:'Fiber Installation',     cat:'Expertise', url:'/expertise/#broadband' },
-    { title:'Structured Cabling',     cat:'Expertise', url:'/expertise/#ict' },
-    { title:'Access Control',         cat:'Expertise', url:'/expertise/#security' },
+    { title:'Broadband',              cat:'Services', url:'/services/#channel' },
+    { title:'ICT Solutions',          cat:'Services', url:'/services/#positioning' },
+    { title:'Security',               cat:'Services', url:'/services/#marketing' },
+    { title:'Fiber Installation',     cat:'Services', url:'/services/#channel' },
+    { title:'Structured Cabling',     cat:'Services', url:'/services/#positioning' },
+    { title:'Access Control',         cat:'Services', url:'/services/#marketing' },
     { title:'Channel Development',    cat:'Services',  url:'/services/#channel' },
     { title:'Market Positioning',     cat:'Services',  url:'/services/#positioning' },
     { title:'Marketing & Visibility', cat:'Services',  url:'/services/#marketing' },

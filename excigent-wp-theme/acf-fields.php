@@ -253,8 +253,9 @@ acf_add_local_field_group( [
             'type'  => 'repeater',
             'button_label' => 'Add Pillar',
             'sub_fields' => [
-                _excigent_sub('field_sv_pl_title', 'Title', 'pillar_title', 'text'),
-                _excigent_sub('field_sv_pl_body',  'Body',  'pillar_body',  'textarea',['rows'=>2]),
+                _excigent_sub('field_sv_pl_icon',  'Icon SVG path', 'pillar_icon', 'textarea', ['rows'=>2]),
+                _excigent_sub('field_sv_pl_title', 'Title',         'pillar_title','text'),
+                _excigent_sub('field_sv_pl_body',  'Body',          'pillar_body', 'textarea', ['rows'=>2]),
             ],
         ],
         [ 'key'=>'field_sv_partners_cta', 'label'=>'Partners CTA', 'name'=>'partners_cta', 'type'=>'link' ],
@@ -349,7 +350,45 @@ acf_add_local_field_group( [
 ] );
 
 /* ══════════════════════════════════════════════════════
-   7. TEAM MEMBER CPT FIELDS
+   7. TEAM PAGE FIELDS
+   ══════════════════════════════════════════════════════ */
+acf_add_local_field_group( [
+    'key'    => 'group_team_page',
+    'title'  => 'Team Page Content',
+    'fields' => [
+        [ 'key'=>'field_tp_hero_eyebrow', 'label'=>'Hero Eyebrow',    'name'=>'hero_eyebrow',    'type'=>'text',    'default_value'=>'Our Leadership' ],
+        [ 'key'=>'field_tp_hero_heading', 'label'=>'Hero Heading',    'name'=>'hero_heading',    'type'=>'wysiwyg', 'toolbar'=>'basic', 'media_upload'=>0 ],
+        [ 'key'=>'field_tp_hero_subtext', 'label'=>'Hero Subtext',    'name'=>'hero_subtext',    'type'=>'textarea','rows'=>3 ],
+        [ 'key'=>'field_tp_sec_eyebrow',  'label'=>'Section Eyebrow', 'name'=>'section_eyebrow', 'type'=>'text',    'default_value'=>'The Excigent Team' ],
+        [ 'key'=>'field_tp_sec_heading',  'label'=>'Section Heading', 'name'=>'section_heading', 'type'=>'wysiwyg', 'toolbar'=>'basic', 'media_upload'=>0 ],
+        [ 'key'=>'field_tp_sec_lead',      'label'=>'Section Lead',      'name'=>'section_lead',      'type'=>'textarea','rows'=>3 ],
+        [ 'key'=>'field_tp_stats_eyebrow', 'label'=>'Stats Eyebrow',    'name'=>'stats_eyebrow',     'type'=>'text',    'default_value'=>'By the Numbers' ],
+        [ 'key'=>'field_tp_stats_heading', 'label'=>'Stats Heading',    'name'=>'stats_heading',     'type'=>'wysiwyg', 'toolbar'=>'basic', 'media_upload'=>0 ],
+        [
+            'key'        => 'field_tp_stats',
+            'label'      => 'Stats',
+            'name'       => 'team_stats',
+            'type'       => 'repeater',
+            'min'        => 0,
+            'max'        => 6,
+            'layout'     => 'table',
+            'button_label' => 'Add Stat',
+            'sub_fields' => [
+                [ 'key'=>'field_tp_stat_num',    'label'=>'Number', 'name'=>'stat_num',    'type'=>'text', 'wrapper'=>['width'=>'25'] ],
+                [ 'key'=>'field_tp_stat_suffix', 'label'=>'Suffix', 'name'=>'stat_suffix', 'type'=>'text', 'wrapper'=>['width'=>'15'] ],
+                [ 'key'=>'field_tp_stat_label',  'label'=>'Label',  'name'=>'stat_label',  'type'=>'text', 'wrapper'=>['width'=>'60'] ],
+            ],
+        ],
+        [ 'key'=>'field_tp_cta_heading', 'label'=>'CTA Heading', 'name'=>'cta_heading', 'type'=>'wysiwyg', 'toolbar'=>'basic', 'media_upload'=>0 ],
+        [ 'key'=>'field_tp_cta_subtext', 'label'=>'CTA Subtext', 'name'=>'cta_subtext', 'type'=>'textarea','rows'=>2 ],
+        [ 'key'=>'field_tp_cta_btn1',    'label'=>'CTA Button 1','name'=>'cta_btn1',    'type'=>'link' ],
+        [ 'key'=>'field_tp_cta_btn2',    'label'=>'CTA Button 2','name'=>'cta_btn2',    'type'=>'link' ],
+    ],
+    'location' => [ [ [ 'param'=>'page_template', 'operator'=>'==', 'value'=>'page-team.php' ] ] ],
+] );
+
+/* ══════════════════════════════════════════════════════
+   8. TEAM MEMBER CPT FIELDS
    ══════════════════════════════════════════════════════ */
 acf_add_local_field_group( [
     'key'    => 'group_team_member_cpt',
@@ -360,4 +399,41 @@ acf_add_local_field_group( [
         [ 'key'=>'field_tm_order', 'label'=>'Display Order','name'=>'member_order',  'type'=>'number','default_value'=>10 ],
     ],
     'location' => [ [ [ 'param'=>'post_type', 'operator'=>'==', 'value'=>'team_member' ] ] ],
+] );
+
+/* ══════════════════════════════════════════════════════
+   9. NEWS CPT FIELDS
+   ══════════════════════════════════════════════════════ */
+acf_add_local_field_group( [
+    'key'    => 'group_news_cpt',
+    'title'  => 'News Article Details',
+    'fields' => [
+        [ 'key'=>'field_news_tag',        'label'=>'Article Tag',    'name'=>'news_tag',        'type'=>'select',
+          'choices'=>['Featured Article'=>'Featured Article','Trade Article'=>'Trade Article','Newsletter'=>'Newsletter','Video'=>'Video','Industry News'=>'Industry News'],
+          'default_value'=>'Trade Article', 'return_format'=>'value' ],
+        [ 'key'=>'field_news_read_time',  'label'=>'Read / Watch Time', 'name'=>'news_read_time', 'type'=>'text', 'placeholder'=>'5 min read' ],
+        [ 'key'=>'field_news_excerpt',    'label'=>'Card Excerpt',   'name'=>'news_excerpt',    'type'=>'textarea','rows'=>3, 'instructions'=>'Short summary shown on cards (1-2 sentences).' ],
+        [ 'key'=>'field_news_is_featured','label'=>'Featured Card',  'name'=>'news_is_featured','type'=>'true_false','default_value'=>0, 'instructions'=>'Use dark featured gradient on thumbnail.' ],
+        [ 'key'=>'field_news_is_video',   'label'=>'Video Post',     'name'=>'news_is_video',   'type'=>'true_false','default_value'=>0 ],
+        [ 'key'=>'field_news_video_url',  'label'=>'Video URL',      'name'=>'news_video_url',  'type'=>'url', 'instructions'=>'YouTube / Vimeo link (used on detail page).' ],
+    ],
+    'location' => [ [ [ 'param'=>'post_type', 'operator'=>'==', 'value'=>'news' ] ] ],
+] );
+
+/* ══════════════════════════════════════════════════════
+   10. NEWS & EVENTS PAGE FIELDS
+   ══════════════════════════════════════════════════════ */
+acf_add_local_field_group( [
+    'key'    => 'group_news_events_page',
+    'title'  => 'News & Events Page Content',
+    'fields' => [
+        [ 'key'=>'field_ne_hero_eyebrow',    'label'=>'Hero Eyebrow',       'name'=>'hero_eyebrow',      'type'=>'text',    'default_value'=>'News & Events' ],
+        [ 'key'=>'field_ne_hero_heading',    'label'=>'Hero Heading',       'name'=>'hero_heading',      'type'=>'wysiwyg', 'toolbar'=>'basic','media_upload'=>0 ],
+        [ 'key'=>'field_ne_hero_subtext',    'label'=>'Hero Subtext',       'name'=>'hero_subtext',      'type'=>'textarea','rows'=>2 ],
+        [ 'key'=>'field_ne_events_eyebrow',  'label'=>'Events Eyebrow',     'name'=>'events_eyebrow',    'type'=>'text',    'default_value'=>'Upcoming Events' ],
+        [ 'key'=>'field_ne_events_heading',  'label'=>'Events Heading',     'name'=>'events_heading',    'type'=>'wysiwyg', 'toolbar'=>'basic','media_upload'=>0 ],
+        [ 'key'=>'field_ne_news_eyebrow',    'label'=>'News Eyebrow',       'name'=>'news_eyebrow',      'type'=>'text',    'default_value'=>'Latest News' ],
+        [ 'key'=>'field_ne_news_heading',    'label'=>'News Section Heading','name'=>'news_section_heading','type'=>'wysiwyg','toolbar'=>'basic','media_upload'=>0 ],
+    ],
+    'location' => [ [ [ 'param'=>'page_template', 'operator'=>'==', 'value'=>'page-news-events.php' ] ] ],
 ] );

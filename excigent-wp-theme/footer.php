@@ -52,9 +52,9 @@ $copy_year   = date( 'Y' );
           'depth'          => 1,
           'fallback_cb'    => function() {
               echo '<ul>
-                <li><a href="' . esc_url( home_url( '/expertise/#broadband' ) ) . '">Broadband</a></li>
-                <li><a href="' . esc_url( home_url( '/expertise/#ict' ) ) . '">ICT</a></li>
-                <li><a href="' . esc_url( home_url( '/expertise/#security' ) ) . '">Security</a></li>
+                <li><a href="' . esc_url( home_url( '/services/#channel' ) ) . '">Broadband</a></li>
+                <li><a href="' . esc_url( home_url( '/services/#positioning' ) ) . '">ICT</a></li>
+                <li><a href="' . esc_url( home_url( '/services/#marketing' ) ) . '">Security</a></li>
                 <li><a href="' . esc_url( home_url( '/about/#network' ) ) . '">Our Regions</a></li>
               </ul>';
           },

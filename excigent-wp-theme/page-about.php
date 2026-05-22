@@ -12,10 +12,10 @@ function _af( $k, $fb = '' ) { return function_exists( 'get_field' ) ? ( get_fie
 <header class="page-hero">
   <div class="page-hero-inner">
     <span class="eyebrow"><span class="eyebrow-dot"></span><?php echo esc_html( _af('hero_eyebrow','About Excigent') ); ?></span>
-    <h1><?php echo wp_kses_post( _af('hero_heading','Built on <strong>decades</strong> of leadership<br>at the intersection of technology.') ); ?></h1>
+    <h1><?php echo excigent_h( 'hero_heading', 'Built on <strong>decades</strong> of leadership<br>at the intersection of technology.' ); ?></h1>
     <p><?php echo esc_html( _af('hero_subtext','Excigent Tech Partners was formed to help innovative companies turn strong potential into market traction and revenue growth — at the convergence of Broadband, ICT, and Security.') ); ?></p>
     <div class="page-hero-actions">
-      <?php excigent_link('hero_btn_primary',   home_url('/about/#leadership'), 'Meet the Team', 'btn-fill'); ?>
+      <?php excigent_link('hero_btn_primary',   home_url('/team/'), 'Meet the Team', 'btn-fill'); ?>
       <?php excigent_link('hero_btn_secondary', home_url('/contact/'),          'Work With Us',   'btn-ghost'); ?>
     </div>
   </div>
@@ -30,7 +30,7 @@ function _af( $k, $fb = '' ) { return function_exists( 'get_field' ) ? ( get_fie
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <span class="section-eyebrow"><?php echo esc_html( _af('who_eyebrow','Who We Are') ); ?></span>
-        <h2><?php echo wp_kses_post( _af('who_heading','A commercial agency built for <strong>market development</strong>.') ); ?></h2>
+        <h2><?php echo excigent_h( 'who_heading', 'A commercial agency built for <strong>market development</strong>.' ); ?></h2>
         <p><?php echo esc_html( _af('who_body','Excigent Tech Partners is a commercial agency and market development partner helping innovative companies expand across North America, Latin America, and the Caribbean through strategy, channel development, market positioning, and disciplined commercial execution.') ); ?></p>
         <?php excigent_link('who_cta', home_url('/services/'), 'Explore Our Services', 'btn-fill dark'); ?>
       </div>
@@ -70,9 +70,9 @@ function _af( $k, $fb = '' ) { return function_exists( 'get_field' ) ? ( get_fie
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
         <span class="section-eyebrow"><?php echo esc_html( _af('markets_eyebrow','What We Do') ); ?></span>
-        <h2><?php echo wp_kses_post( _af('markets_heading','Commercial execution across <strong>three critical</strong> technology markets.') ); ?></h2>
+        <h2><?php echo excigent_h( 'markets_heading', 'Commercial execution across <strong>three critical</strong> technology markets.' ); ?></h2>
         <p><?php echo esc_html( _af('markets_body','We position ourselves at the convergence of Broadband, ICT, and Security — markets where we bring deep expertise, trusted relationships, and proven commercial frameworks.') ); ?></p>
-        <?php excigent_link('markets_cta', home_url('/expertise/'), 'View Our Expertise', 'btn-fill'); ?>
+        <?php excigent_link('markets_cta', home_url('/services/'), 'View Our Services', 'btn-fill'); ?>
       </div>
       <div class="split-body">
         <div class="split-items">
@@ -152,7 +152,7 @@ function _af( $k, $fb = '' ) { return function_exists( 'get_field' ) ? ( get_fie
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
         <span class="section-eyebrow"><?php echo esc_html( _af('why_eyebrow','Why Companies Engage Us') ); ?></span>
-        <h2><?php echo wp_kses_post( _af('why_heading','Not just relationships — <strong>commercial outcomes</strong>.') ); ?></h2>
+        <h2><?php echo excigent_h( 'why_heading', 'Not just relationships — <strong>commercial outcomes</strong>.' ); ?></h2>
         <p><?php echo esc_html( _af('why_body','We bring the experience, relationships, and commercial discipline to turn market potential into real revenue growth across the Americas.') ); ?></p>
         <?php excigent_link('why_cta', home_url('/contact/'), 'Start a Conversation', 'btn-fill'); ?>
       </div>
@@ -184,7 +184,7 @@ function _af( $k, $fb = '' ) { return function_exists( 'get_field' ) ? ( get_fie
 <section class="section light" id="leadership">
   <div class="section-inner">
     <span class="section-eyebrow reveal" style="--d:0s">Leadership</span>
-    <h2 class="section-title reveal" style="--d:0.06s"><?php echo wp_kses_post( _af('leadership_heading','Three industry veterans. <strong>One team</strong>.') ); ?></h2>
+    <h2 class="section-title reveal" style="--d:0.06s"><?php echo excigent_h( 'leadership_heading', 'Three industry veterans. <strong>One team</strong>.' ); ?></h2>
     <p class="section-lead reveal" style="--d:0.12s"><?php echo esc_html( _af('leadership_subtext','80+ combined years across broadband engineering, digital infrastructure, and security — with the relationships that move markets.') ); ?></p>
     <div class="team-grid">
       <?php
@@ -237,7 +237,7 @@ function _af( $k, $fb = '' ) { return function_exists( 'get_field' ) ? ( get_fie
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <span class="section-eyebrow">How It's Done</span>
-        <h2><?php echo wp_kses_post( _af('process_heading','A disciplined path from <strong>assessment</strong> to revenue growth.') ); ?></h2>
+        <h2><?php echo excigent_h( 'process_heading', 'A disciplined path from <strong>assessment</strong> to revenue growth.' ); ?></h2>
         <p><?php echo esc_html( _af('process_body','Every engagement follows a structured six-step commercial framework — moving principals from market fit through to sustainable revenue growth across the Americas.') ); ?></p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;">
           <?php excigent_link('process_cta1', home_url('/contact/'),          'Start a Conversation', 'btn-fill'); ?>

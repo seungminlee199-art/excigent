@@ -24,7 +24,7 @@ $subtext = $subtext ?: 'Quarterly insights, trade articles, and convergence inte
 ?>
 <section class="subscribe">
   <div class="subscribe-inner">
-    <h2 class="reveal"><?php echo wp_kses_post( $heading ); ?></h2>
+    <h2 class="reveal"><?php echo wp_kses_post( excigent_strip_p( $heading ) ); ?></h2>
     <p class="reveal" style="--d:0.08s"><?php echo wp_kses_post( $subtext ); ?></p>
 
     <?php if ( $cta_links ) : ?>

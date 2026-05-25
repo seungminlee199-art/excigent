@@ -397,9 +397,13 @@ acf_add_local_field_group( [
     'key'    => 'group_team_member_cpt',
     'title'  => 'Team Member Details',
     'fields' => [
-        [ 'key'=>'field_tm_creds', 'label'=>'Credentials',  'name'=>'member_creds',  'type'=>'text' ],
-        [ 'key'=>'field_tm_bio',   'label'=>'Short Bio',    'name'=>'member_bio',    'type'=>'textarea','rows'=>4 ],
-        [ 'key'=>'field_tm_order', 'label'=>'Display Order','name'=>'member_order',  'type'=>'number','default_value'=>10 ],
+        [ 'key'=>'field_tm_creds',      'label'=>'Credentials',       'name'=>'member_creds',      'type'=>'text' ],
+        [ 'key'=>'field_tm_bio',        'label'=>'Short Bio',         'name'=>'member_bio',        'type'=>'textarea', 'rows'=>4 ],
+        [ 'key'=>'field_tm_full_bio',   'label'=>'Full Bio (Detail Page)', 'name'=>'member_full_bio', 'type'=>'textarea', 'rows'=>7, 'instructions'=>'Longer bio shown on the individual team member page. Falls back to Short Bio if empty.' ],
+        [ 'key'=>'field_tm_expertise',  'label'=>'Expertise Tags',    'name'=>'member_expertise',  'type'=>'text', 'instructions'=>'Comma-separated. e.g. Access Control, Video Surveillance, Program Leadership' ],
+        [ 'key'=>'field_tm_linkedin',   'label'=>'LinkedIn URL',      'name'=>'member_linkedin',   'type'=>'url' ],
+        [ 'key'=>'field_tm_market',     'label'=>'Primary Market',    'name'=>'member_market',     'type'=>'text', 'instructions'=>'e.g. Security, Broadband, ICT — shown as a badge in the hero.' ],
+        [ 'key'=>'field_tm_order',      'label'=>'Display Order',     'name'=>'member_order',      'type'=>'number', 'default_value'=>10 ],
     ],
     'location' => [ [ [ 'param'=>'post_type', 'operator'=>'==', 'value'=>'team_member' ] ] ],
 ] );

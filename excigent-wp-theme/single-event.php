@@ -55,21 +55,68 @@ $fmt_date = $date ? date('F j, Y', strtotime($date)) : '';
   $content = get_the_content();
   if ($content) {
     echo apply_filters('the_content', $content);
-  } else {
-    echo '<p>More details about this event coming soon. <a href="' . esc_url(home_url('/contact/')) . '" style="color:var(--blue)">Contact us</a> to learn more or register your interest.</p>';
-  }
-  ?>
+    if ($link) : ?>
+    <div class="event-detail-actions">
+      <a href="<?php echo esc_url($link); ?>" class="btn-fill dark" target="_blank" rel="noopener">Register / Learn More</a>
+      <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn-ghost navy">Contact Us</a>
+    </div>
+    <?php else : ?>
+    <div class="event-detail-actions">
+      <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn-fill dark">Get in Touch</a>
+    </div>
+    <?php endif;
+  } else { ?>
 
-  <?php if ($link) : ?>
-  <div class="event-detail-actions">
-    <a href="<?php echo esc_url($link); ?>" class="btn-fill dark" target="_blank" rel="noopener">Register / Learn More</a>
-    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn-ghost navy">Contact Us</a>
+  <!-- COMING SOON LAYOUT -->
+  <div class="ecs-banner">
+    <div class="ecs-banner-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    </div>
+    <div class="ecs-banner-text">
+      <h3>Full Details Coming Soon</h3>
+      <p>We're finalizing the details for this event. Check back soon — or reach out now to register your interest, arrange a meeting, or learn more about Excigent's presence at this show.</p>
+    </div>
   </div>
-  <?php else : ?>
-  <div class="event-detail-actions">
-    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn-fill dark">Get in Touch</a>
+
+  <div class="ecs-highlights">
+    <div class="ecs-highlight">
+      <div class="ecs-h-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h4>Meet Our Team</h4>
+      <p>Connect with Excigent's senior leadership and explore partnership opportunities face to face.</p>
+    </div>
+    <div class="ecs-highlight">
+      <div class="ecs-h-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <h4>Discover Our Markets</h4>
+      <p>See how we drive commercial growth across Broadband, ICT, and Security throughout the Americas.</p>
+    </div>
+    <div class="ecs-highlight">
+      <div class="ecs-h-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h4>Schedule a Meeting</h4>
+      <p>Reach out before the event to arrange a dedicated one-on-one with our team at the venue.</p>
+    </div>
   </div>
-  <?php endif; ?>
+
+  <div class="ecs-cta-block">
+    <div class="ecs-cta-text">
+      <span class="ecs-cta-label">Interested in connecting?</span>
+      <p>Let us know you'll be attending — we'll reach out to coordinate.</p>
+    </div>
+    <div class="ecs-cta-actions">
+      <?php if ($link) : ?>
+      <a href="<?php echo esc_url($link); ?>" class="btn-fill dark" target="_blank" rel="noopener">Register / Learn More</a>
+      <?php endif; ?>
+      <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn-fill dark">Get in Touch</a>
+      <a href="<?php echo esc_url(home_url('/news-events/')); ?>" class="btn-ghost navy">View All Events</a>
+    </div>
+  </div>
+
+  <?php } ?>
 </div>
 
 <!-- MORE EVENTS -->

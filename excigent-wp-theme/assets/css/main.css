@@ -1022,7 +1022,8 @@ footer { background: #061F2E; color: rgba(255,255,255,0.66); padding: 4.5rem 2re
 .ecs-banner { display: flex; align-items: flex-start; gap: 1.5rem; background: linear-gradient(135deg, #f0f6ff 0%, #e8f0fb 100%); border: 1px solid rgba(18,96,167,0.15); border-left: 4px solid var(--blue); border-radius: 12px; padding: 2rem 2.2rem; margin-bottom: 2.8rem; }
 .ecs-banner-icon { flex-shrink: 0; width: 48px; height: 48px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
 .ecs-banner-icon svg { width: 22px; height: 22px; stroke: #ffffff; }
-.ecs-banner-text h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin: 0 0 0.55rem; letter-spacing: -0.01em; }
+.ecs-banner-text h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin: 0 0 0.55rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.ecs-booth-badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #ffffff; background: var(--blue); border-radius: 20px; padding: 0.2rem 0.75rem; white-space: nowrap; }
 .ecs-banner-text p { font-size: 0.97rem; color: #4a5568; line-height: 1.75; margin: 0; }
 .ecs-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-bottom: 3rem; }
 .ecs-highlight { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.8rem 1.6rem; transition: box-shadow .2s, transform .2s; }

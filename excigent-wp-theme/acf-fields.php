@@ -345,6 +345,9 @@ acf_add_local_field_group( [
         [ 'key'=>'field_ev_tag_cpt',  'label'=>'Tag/Market',  'name'=>'event_tag',      'type'=>'text' ],
         [ 'key'=>'field_ev_gradient_cpt','label'=>'Card Gradient CSS','name'=>'event_gradient','type'=>'text', 'placeholder'=>'linear-gradient(135deg,#061F2E,#004569 60%,#0061B3)' ],
         [ 'key'=>'field_ev_link',     'label'=>'Event URL',   'name'=>'event_link',     'type'=>'url' ],
+        [ 'key'=>'field_ev_coming_soon_text', 'label'=>'Coming Soon Message', 'name'=>'event_coming_soon_text', 'type'=>'textarea', 'rows'=>3, 'instructions'=>'Shown in the banner when no full content is added. Leave blank for the default message.' ],
+        [ 'key'=>'field_ev_booth',    'label'=>'Booth / Extra Detail', 'name'=>'event_booth', 'type'=>'text', 'instructions'=>'e.g. "Booth #C2145" or "Hall 4, Stand 210". Shown as a badge in the banner.' ],
+        [ 'key'=>'field_ev_cta_desc', 'label'=>'CTA Description', 'name'=>'event_cta_desc', 'type'=>'text', 'instructions'=>'Line shown in the dark CTA block. Leave blank for default.' ],
     ],
     'location' => [ [ [ 'param'=>'post_type', 'operator'=>'==', 'value'=>'event' ] ] ],
 ] );

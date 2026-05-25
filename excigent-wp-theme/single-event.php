@@ -5,13 +5,16 @@
 get_header();
 the_post();
 
-$date     = get_field('event_date')     ?: '';
-$location = get_field('event_location') ?: '';
-$type     = get_field('event_type')     ?: 'Event';
-$tag      = get_field('event_tag')      ?: '';
-$gradient = get_field('event_gradient') ?: 'linear-gradient(135deg,#061F2E,#0F405A 50%,#1260A7)';
-$link     = get_field('event_link')     ?: '';
-$fmt_date = $date ? date('F j, Y', strtotime($date)) : '';
+$date             = get_field('event_date')             ?: '';
+$location         = get_field('event_location')         ?: '';
+$type             = get_field('event_type')             ?: 'Event';
+$tag              = get_field('event_tag')              ?: '';
+$gradient         = get_field('event_gradient')         ?: 'linear-gradient(135deg,#061F2E,#0F405A 50%,#1260A7)';
+$link             = get_field('event_link')             ?: '';
+$coming_soon_text = get_field('event_coming_soon_text') ?: '';
+$booth            = get_field('event_booth')            ?: '';
+$cta_desc         = get_field('event_cta_desc')         ?: '';
+$fmt_date         = $date ? date('F j, Y', strtotime($date)) : '';
 ?>
 
 <!-- EVENT HERO -->
@@ -73,8 +76,8 @@ $fmt_date = $date ? date('F j, Y', strtotime($date)) : '';
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     </div>
     <div class="ecs-banner-text">
-      <h3>Full Details Coming Soon</h3>
-      <p>We're finalizing the details for this event. Check back soon — or reach out now to register your interest, arrange a meeting, or learn more about Excigent's presence at this show.</p>
+      <h3>Full Details Coming Soon<?php if ($booth) : ?> <span class="ecs-booth-badge"><?php echo esc_html($booth); ?></span><?php endif; ?></h3>
+      <p><?php echo esc_html( $coming_soon_text ?: "We're finalizing the details for this event. Check back soon — or reach out now to register your interest, arrange a meeting, or learn more about Excigent's presence at this show." ); ?></p>
     </div>
   </div>
 
@@ -105,7 +108,7 @@ $fmt_date = $date ? date('F j, Y', strtotime($date)) : '';
   <div class="ecs-cta-block">
     <div class="ecs-cta-text">
       <span class="ecs-cta-label">Interested in connecting?</span>
-      <p>Let us know you'll be attending — we'll reach out to coordinate.</p>
+      <p><?php echo esc_html( $cta_desc ?: "Let us know you'll be attending — we'll reach out to coordinate." ); ?></p>
     </div>
     <div class="ecs-cta-actions">
       <?php if ($link) : ?>

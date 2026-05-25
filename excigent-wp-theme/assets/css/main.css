@@ -243,9 +243,7 @@ nav {
   margin-bottom: 1.4rem;
 }
 .page-hero .eyebrow-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #B8DBFF;
+  display: none;
 }
 .page-hero h1 {
   font-size: clamp(2.1rem, 4vw, 3.1rem);

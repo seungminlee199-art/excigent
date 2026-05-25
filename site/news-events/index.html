@@ -1,280 +1,264 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>News &amp; Events &#8211; Excigent</title>
-<meta name='robots' content='max-image-preview:large' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://excigent.tequp.info/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fexcigent.tequp.info%2Fnews-events%2F" />
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://excigent.tequp.info/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fexcigent.tequp.info%2Fnews-events%2F&#038;format=xml" />
-<style id="wp-img-auto-sizes-contain-inline-css">
-img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
-/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
-</style>
-<style id="wp-emoji-styles-inline-css">
+<title>News &amp; Insights — Broadband, ICT &amp; Security Intelligence | Excigent Tech Partners</title>
+<meta name="description" content="Industry articles, videos, and market intelligence from Excigent Tech Partners — covering Broadband, ICT, and Security convergence across the Americas." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://excigent.com/news.html" />
+<meta property="og:title" content="News &amp; Insights — Excigent Tech Partners" />
+<meta property="og:description" content="Trade articles, videos, and market intelligence on Broadband, ICT, and Security convergence from the Excigent team." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://excigent.com/news.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<style>
+/* News filter tabs */
+.news-filters { display: flex; gap: 0.6rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.news-filter {
+  font-family: inherit; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.48rem 1.1rem;
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 30px; cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.news-filter:hover, .news-filter.active { background: var(--navy); color: #fff; border-color: var(--navy); }
 
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-/*# sourceURL=wp-emoji-styles-inline-css */
-</style>
+/* Featured article (full width) */
+.news-featured {
+  display: grid; grid-template-columns: 1.4fr 1fr; border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(0,69,105,0.10); margin-bottom: 1.5rem; cursor: pointer;
+  transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.4s ease;
+  background: #fff;
+}
+.news-featured:hover { transform: translateY(-4px); border-color: rgba(0,97,179,0.25); box-shadow: 0 22px 56px -28px rgba(0,69,105,0.30); }
+.featured-thumb { position: relative; min-height: 360px; background: linear-gradient(135deg, #061F2E 0%, #004569 50%, #0061B3 100%); overflow: hidden; }
+.featured-thumb::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.6; }
+.featured-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 60%, rgba(255,255,255,0.04) 100%); }
+.featured-label { position: absolute; top: 1.5rem; left: 1.5rem; z-index: 2; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; padding: 0.35rem 0.85rem; background: rgba(0,97,179,0.75); backdrop-filter: blur(8px); border-radius: 30px; }
+.featured-body { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+.featured-body .news-date { margin-bottom: 0.7rem; }
+.featured-body h2 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 600; line-height: 1.35; color: var(--navy); margin-bottom: 1rem; transition: color 0.25s ease; }
+.news-featured:hover .featured-body h2 { color: var(--blue); }
+.featured-body p { font-size: 0.95rem; line-height: 1.7; color: var(--muted); margin-bottom: 1.5rem; }
+.read-more { font-size: 0.82rem; font-weight: 600; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; border-bottom: 1.5px solid transparent; transition: border-color 0.25s ease; }
+.read-more:hover { border-color: var(--blue); }
 
-<link rel='stylesheet' id='excigent-google-fonts-css' href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&#038;display=swap' media='all' />
-<link rel='stylesheet' id='excigent-main-css' href='/assets/css/main.css?ver=1.0.0' media='all' />
-<link rel="https://api.w.org/" href="https://excigent.tequp.info/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://excigent.tequp.info/wp-json/wp/v2/pages/25" />
-<meta name="generator" content="WordPress 7.0" />
-<link rel="canonical" href="https://excigent.tequp.info/news-events/" />
-<link rel='shortlink' href='https://excigent.tequp.info/?p=25' />
+/* Regular news grid */
+.news-grid-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+
+/* Video card special style */
+.news-card.video .news-thumb { position: relative; }
+.video-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.92); box-shadow: 0 10px 30px -8px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.3s ease; }
+.news-card.video:hover .video-overlay { transform: translate(-50%,-50%) scale(1.12); background: #fff; }
+.video-play { width: 0; height: 0; border-left: 14px solid var(--navy); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 3px; }
+
+/* Newsletter section */
+.newsletter-section { background: #F4F7FB; padding: 5rem 2rem; }
+.newsletter-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.newsletter-copy h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 300; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+.newsletter-copy h2 strong { font-weight: 700; }
+.newsletter-copy p { font-size: 0.98rem; line-height: 1.7; color: var(--muted); }
+
+@media (max-width: 980px) {
+  .news-featured { grid-template-columns: 1fr; }
+  .featured-thumb { min-height: 240px; }
+  .news-grid-inner { grid-template-columns: 1fr; }
+  .newsletter-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+</style>
 </head>
-<body class="wp-singular page-template page-template-page-news-events page-template-page-news-events-php page page-id-25 wp-theme-excigent-wp-theme page-news-events">
+<body>
 
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <a href="/">
-      <img src="/assets/images/logo.svg"
-           alt="Excigent" />
-    </a>
-  </div>
-
-  <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="#">About</a></li><li><a href="#">Team</a></li><li><a href="#">Services</a></li><li><a href="#">News &amp; Events</a></li><li><a href="#">Contact</a></li></ul>
+  <div class="nav-logo"><a href="/"><img src="/assets/images/logo.svg" alt="Excigent Tech Partners" /></a></div>
+    <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/media">Media / Press</a></li>
+    <li><a href="/contact">Connect With Us</a></li>
+  </ul>
   <div class="nav-right">
-    <span class="nav-phone">
-      +1 (800) 000-0000    </span>
-    <a href="#" class="nav-cta">Connect With Us</a>
-    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <span class="nav-phone">+1 (800) 000-0000</span>
+        <a href="/contact" class="nav-cta">Connect With Us</a>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
 
 <!-- PAGE HERO -->
 <header class="page-hero">
   <div class="page-hero-inner">
-    <span class="eyebrow"><span class="eyebrow-dot"></span>News &amp; Events</span>
-    <h1>Industry <strong>perspectives</strong> &amp; upcoming events.</h1>
-    <p>Trade articles, quarterly newsletters, and market intelligence — alongside upcoming events where you can connect with the Excigent team.</p>
+    <span class="eyebrow">Intelligence &amp; Insights</span>
+    <h1>Industry <strong>perspectives</strong>,<br>delivered from the inside.</h1>
+    <p>Articles, videos, and market intelligence from the Excigent team — signals worth tracking in Broadband, ICT, and Security convergence.</p>
   </div>
 </header>
 
-<!-- ══ UPCOMING EVENTS ══ -->
-<section class="section tint" id="events">
+<!-- ARTICLES & VIDEOS -->
+<section class="section light">
   <div class="section-inner">
-    <span class="section-eyebrow reveal" style="--d:0s">Upcoming Events</span>
-    <h2 class="section-title reveal" style="--d:0.06s">Where we&#8217;ll be <strong>next</strong>.</h2>
 
-    <div class="events-grid">
-          <a href="https://excigent.tequp.info/events/infocomm-2026/" class="ev-card reveal">
-        <div class="ev-card-top" style="background:linear-gradient(135deg,#061F2E,#004569 60%,#0061B3)">
-          <div class="ev-badge">
-            <span class="ev-month">Jun</span>
-            <span class="ev-day">14</span>
-          </div>
-        </div>
-        <div class="ev-card-body">
-          <span class="ev-type">Trade Show</span>
-          <h4 class="ev-name">InfoComm 2026</h4>
-                    <p class="ev-loc">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Las Vegas, NV          </p>
-                    <span class="ev-tag">ICT &amp; AV Technology</span>        </div>
-      </a>
-          <a href="https://excigent.tequp.info/events/cedia-expo-2026/" class="ev-card reveal">
-        <div class="ev-card-top" style="background:linear-gradient(135deg,#0A2F45,#0061B3 80%)">
-          <div class="ev-badge">
-            <span class="ev-month">Sep</span>
-            <span class="ev-day">04</span>
-          </div>
-        </div>
-        <div class="ev-card-body">
-          <span class="ev-type">Trade Show</span>
-          <h4 class="ev-name">CEDIA Expo 2026</h4>
-                    <p class="ev-loc">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Denver, CO          </p>
-                    <span class="ev-tag">Residential Technology</span>        </div>
-      </a>
-          <a href="https://excigent.tequp.info/events/futurecom-2026/" class="ev-card reveal">
-        <div class="ev-card-top" style="background:linear-gradient(135deg,#004569,#0061B3 80%)">
-          <div class="ev-badge">
-            <span class="ev-month">Oct</span>
-            <span class="ev-day">19</span>
-          </div>
-        </div>
-        <div class="ev-card-body">
-          <span class="ev-type">International Expo</span>
-          <h4 class="ev-name">Futurecom 2026</h4>
-                    <p class="ev-loc">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Sao Paulo, Brazil          </p>
-                    <span class="ev-tag">Broadband &amp; Telecom</span>        </div>
-      </a>
-          <a href="https://excigent.tequp.info/events/gsx-2026/" class="ev-card reveal">
-        <div class="ev-card-top" style="background:linear-gradient(135deg,#061F2E,#0061B3 90%)">
-          <div class="ev-badge">
-            <span class="ev-month">Nov</span>
-            <span class="ev-day">09</span>
-          </div>
-        </div>
-        <div class="ev-card-body">
-          <span class="ev-type">Security Expo</span>
-          <h4 class="ev-name">GSX 2026</h4>
-                    <p class="ev-loc">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Houston, TX          </p>
-                    <span class="ev-tag">Security &amp; Access Control</span>        </div>
-      </a>
-        </div>
-  </div>
-</section>
+    <div class="news-filters reveal" style="--d:0s">
+      <button class="news-filter active" data-filter="all">All</button>
+      <button class="news-filter" data-filter="article">Articles</button>
+      <button class="news-filter" data-filter="video">Videos</button>
+      <button class="news-filter" data-filter="newsletter">Newsletters</button>
+      <button class="news-filter" data-filter="market-update">Market Updates</button>
+    </div>
 
-<!-- ══ NEWS / ARTICLES ══ -->
-<section class="section light" id="news">
-  <div class="section-inner">
-    <span class="section-eyebrow reveal" style="--d:0s">Latest News</span>
-    <h2 class="section-title reveal" style="--d:0.06s">Industry <strong>perspectives</strong>,<br />delivered from the inside.</h2>
-
-        <div class="news-grid-full">
-            <a href="https://excigent.tequp.info/news/why-broadband-ict-security-convergence-is-rewriting-the-infrastructure-playbook/" class="news-card reveal" style="--d:0.05s">
-        <div class="news-thumb featured">
-                    <span class="news-tag">Featured Article</span>
-                  </div>
-        <div class="news-body">
-          <div class="news-date">May 22, 2026 &middot; 6 min read</div>
-          <h3>Why Broadband, ICT &amp; Security Convergence Is Rewriting the Infrastructure Playbook</h3>
-          <p>The future of infrastructure isn&#039;t three silos — it&#039;s an integrated system. Here&#039;s what principals need to understand about positioning solutions in a converged market.</p>        </div>
-      </a>
-            <a href="https://excigent.tequp.info/news/latin-america-the-caribbean-where-channel-relationships-still-win-deals/" class="news-card reveal" style="--d:0.13s">
-        <div class="news-thumb ">
-                    <span class="news-tag">Trade Article</span>
-                  </div>
-        <div class="news-body">
-          <div class="news-date">May 8, 2026 &middot; 4 min read</div>
-          <h3>Latin America &amp; the Caribbean: Where Channel Relationships Still Win Deals</h3>
-          <p>Notes from the field on what really moves the needle for principals expanding into Latin America and the Caribbean.</p>        </div>
-      </a>
-            <a href="https://excigent.tequp.info/news/q2-2026-market-intelligence-signals-worth-tracking-across-broadband-ict-security/" class="news-card reveal" style="--d:0.21s">
-        <div class="news-thumb ">
-                    <span class="news-tag">Newsletter</span>
-                  </div>
-        <div class="news-body">
-          <div class="news-date">Apr 24, 2026 &middot; 5 min read</div>
-          <h3>Q2 2026 Market Intelligence: Signals Worth Tracking Across Broadband, ICT &amp; Security</h3>
-          <p>Quarterly insights on market signals worth tracking across broadband, ICT, and security — from the Excigent team.</p>        </div>
-      </a>
-          </div>
-
+    <!-- FEATURED -->
+    <div class="news-featured reveal" data-category="article" style="--d:0.06s; cursor:pointer" onclick="location.href='news-detail.html?id=1'">
+      <div class="featured-thumb">
+        <span class="featured-label">Featured Article</span>
       </div>
-</section>
-
-<!-- CTA -->
-<section class="subscribe">
-  <div class="subscribe-inner">
-    <h2 class="reveal">Stay <strong>connected</strong> to what's moving the market.</h2>
-    <p class="reveal" style="--d:0.08s">Quarterly insights, trade articles, and convergence intelligence — delivered straight to your inbox.</p>
-
-          <form class="subscribe-form-stack reveal" style="--d:0.16s" onsubmit="return excigentSubscribeSubmit(this)">
-        <div class="subscribe-fields">
-          <input type="text"  placeholder="Full Name"              required aria-label="Full name" />
-          <input type="email" placeholder="your.name@company.com" required aria-label="Email address" />
-        </div>
-        <button type="submit">Subscribe</button>
-      </form>
-
-    
-  </div>
-</section>
-
-<script>
-function excigentSubscribeSubmit(form) {
-  var btn = form.querySelector('button');
-  if (btn) { btn.textContent = 'Subscribed ✓'; btn.style.background = '#0061B3'; btn.style.color = '#fff'; }
-  return false;
-}
-</script>
-
-
-<footer>
-  <div class="footer-inner">
-
-    <!-- Brand column -->
-    <div class="footer-brand">
-      <img src="/assets/images/logo.svg" alt="Excigent" />
-      <p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p>
-      <div class="footer-contact">
-        <a href="mailto:hello@excigent.com">hello@excigent.com</a>
-        <a href="tel:+18000000000">+1 (800) 000-0000</a>
+      <div class="featured-body">
+        <div class="news-date">May 12, 2026 · 6 min read</div>
+        <h2>Why broadband, ICT &amp; security convergence is rewriting the infrastructure playbook</h2>
+        <p>The future of infrastructure isn't three silos — it's an integrated system. Here's what principals need to understand about positioning solutions in a converged market, and where the channel opportunities are emerging fastest.</p>
+        <a href="news-detail.html?id=1" class="read-more">Read the full article →</a>
       </div>
     </div>
 
-    <!-- Company -->
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Why Us</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>    </div>
+    <!-- NEWS GRID -->
+    <div class="news-grid-inner">
 
-    <!-- Markets -->
-    <div class="footer-col">
-      <h4>Markets</h4>
-      <ul>
-                <li><a href="#">Broadband</a></li>
-                <li><a href="#">ICT</a></li>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Our Regions</a></li>
-              </ul>    </div>
+      <article class="news-card video reveal" data-category="video" style="--d:0.05s" onclick="location.href='news-detail.html?id=2'" role="link" tabindex="0">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #004569, #0061B3 70%);">
+          <span class="news-tag">Video</span>
+          <div class="video-overlay"><div class="video-play"></div></div>
+        </div>
+        <div class="news-body">
+          <div class="news-date">April 28, 2026 · 4 min watch</div>
+          <h3>Inside our market model: from assessment to revenue growth</h3>
+          <p>Walk through the six-stage commercial framework Excigent uses with every principal we represent.</p>
+        </div>
+      </article>
 
-    <!-- Services -->
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-                <li><a href="#">Channel Development</a></li>
-                <li><a href="#">Market Positioning</a></li>
-                <li><a href="#">Marketing &amp; Visibility</a></li>
-                <li><a href="#">Our Process</a></li>
-              </ul>    </div>
+      <article class="news-card reveal" data-category="article" style="--d:0.10s" onclick="location.href='news-detail.html?id=3'" role="link" tabindex="0">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0A2F45, #0061B3 70%);">
+          <span class="news-tag">Article</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">April 15, 2026 · 3 min read</div>
+          <h3>Latin America &amp; Caribbean: where channel relationships still win deals</h3>
+          <p>Notes from the field on what really moves the needle for principals expanding into the region.</p>
+        </div>
+      </article>
 
-  </div><!-- .footer-inner -->
+      <article class="news-card reveal" data-category="newsletter" style="--d:0.15s" onclick="location.href='news-detail.html?id=4'" role="link" tabindex="0">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0A2F45, #0061B3 70%);">
+          <span class="news-tag">Newsletter</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">March 30, 2026 · 5 min read</div>
+          <h3>Q1 Market Signal: Structured cabling demand up as enterprise builds accelerate</h3>
+          <p>Quarterly observations from the ICT channel — which product categories are seeing momentum and why.</p>
+        </div>
+      </article>
 
+      <article class="news-card video reveal" data-category="video" style="--d:0.20s" onclick="location.href='news-detail.html?id=5'" role="link" tabindex="0">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #061F2E, #004569 70%);">
+          <span class="news-tag">Video</span>
+          <div class="video-overlay"><div class="video-play"></div></div>
+        </div>
+        <div class="news-body">
+          <div class="news-date">March 12, 2026 · 7 min watch</div>
+          <h3>FTTH deployment trends in 2026: what ISPs need from their supply chain</h3>
+          <p>Robert Lopez breaks down the infrastructure patterns driving broadband buildouts this year.</p>
+        </div>
+      </article>
+
+      <article class="news-card reveal" data-category="market-update" style="--d:0.25s" onclick="location.href='news-detail.html?id=6'" role="link" tabindex="0">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #004569, #004569 70%);">
+          <span class="news-tag">Market Update</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">February 20, 2026 · 4 min read</div>
+          <h3>Security convergence: why access control and video are selling together</h3>
+          <p>The integrated security trend is reshaping how integrators specify and purchase — what principals need to know.</p>
+        </div>
+      </article>
+
+      <article class="news-card reveal" data-category="article" style="--d:0.30s" onclick="location.href='news-detail.html?id=7'" role="link" tabindex="0">
+        <div class="news-thumb" style="background: linear-gradient(135deg, #0061B3, #004569 70%);">
+          <span class="news-tag">Article</span>
+        </div>
+        <div class="news-body">
+          <div class="news-date">January 28, 2026 · 4 min read</div>
+          <h3>The case for Optical LAN: why POL is gaining traction in enterprise ICT</h3>
+          <p>Paul Weintraub explains why passive optical LAN is moving from niche to mainstream in 2026 enterprise builds.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER SECTION -->
+<section class="newsletter-section">
+  <div class="newsletter-inner">
+    <div class="newsletter-copy reveal from-left" style="--d:0s">
+      <span class="section-eyebrow" style="color:var(--blue); margin-bottom:1rem">Stay Informed</span>
+      <h2>Convergence intelligence,<br><strong>straight to your inbox</strong>.</h2>
+      <p>Quarterly insights, trade articles, and market signals from the Excigent team — focused on Broadband, ICT, and Security convergence. No fluff. Just the signals worth tracking.</p>
+    </div>
+    <div class="reveal" style="--d:0.1s">
+      <form class="subscribe-form" style="max-width:100%; border-radius:14px; padding:1rem 1rem 1rem 1.4rem; background:rgba(0,69,105,0.06); border:1px solid rgba(0,69,105,0.14);">
+        <input type="email" placeholder="your.name@company.com" required style="color:var(--navy);" />
+        <button type="submit" style="background:var(--navy); color:#fff;">Subscribe</button>
+      </form>
+      <p style="margin-top:0.75rem; font-size:0.78rem; color:var(--muted);">Quarterly sends. No spam. Unsubscribe any time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><img src="/assets/images/logo.svg" alt="Excigent Tech Partners" /><p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p><div class="footer-contact"><a href="mailto:hello@excigent.com">hello@excigent.com</a><a href="tel:+18000000000">+1 (800) 000-0000</a></div></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/team">Team</a></li><li><a href="/about#why">Why Us</a></li><li><a href="/contact">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Markets</h4><ul><li><a href="/expertise#broadband">Broadband</a></li><li><a href="/expertise#ict">ICT</a></li><li><a href="/expertise#security">Security</a></li><li><a href="/about#network">Our Regions</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="/services#channel">Channel Development</a></li><li><a href="/services#positioning">Market Positioning</a></li><li><a href="/services#marketing">Marketing &amp; Visibility</a></li><li><a href="/services#process">Our Process</a></li></ul></div>
+  </div>
   <div class="footer-bottom">
-    <span>© 2026 Excigent. All rights reserved.</span>
+    <span>© 2026 Excigent Tech Partners. All rights reserved.</span>
     <div class="footer-social">
-      <a href="#" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.49 6S0 4.881 0 3.5 1.11 1 2.49 1s2.49 1.119 2.49 2.5zM.22 8h4.54v14H.22V8zm7.61 0h4.35v1.91h.06c.61-1.15 2.09-2.36 4.31-2.36 4.61 0 5.46 3.03 5.46 6.97V22h-4.54v-6.95c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.81-2.66 3.67V22H7.83V8z"/></svg>
-      </a>
-      <a href="#" aria-label="X (Twitter)">
-        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="#" aria-label="YouTube">
-        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.49 6S0 4.881 0 3.5 1.11 1 2.49 1s2.49 1.119 2.49 2.5zM.22 8h4.54v14H.22V8zm7.61 0h4.35v1.91h.06c.61-1.15 2.09-2.36 4.31-2.36 4.61 0 5.46 3.03 5.46 6.97V22h-4.54v-6.95c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.81-2.66 3.67V22H7.83V8z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
     </div>
   </div>
 </footer>
 
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/excigent-wp-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+<script>
+(function () {
+  var filters  = document.querySelectorAll('.news-filter');
+  var featured = document.querySelector('.news-featured');
+  var cards    = document.querySelectorAll('.news-card');
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filters.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.dataset.filter;
+
+      if (featured) {
+        featured.style.display = (filter === 'all' || filter === featured.dataset.category) ? '' : 'none';
+      }
+
+      cards.forEach(function (card) {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+      });
+    });
+  });
+}());
 </script>
-<script id="excigent-main-js" src="/assets/js/main.js?ver=1.0.0"></script>
-<script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://excigent.tequp.info/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
-</script>
-<script type="module">
-/*! This file is auto-generated */
-const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=https://excigent.tequp.info/wp-includes/js/wp-emoji-loader.min.js
-</script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

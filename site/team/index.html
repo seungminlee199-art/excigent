@@ -1,237 +1,248 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Team &#8211; Excigent</title>
-<meta name='robots' content='max-image-preview:large' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://excigent.tequp.info/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fexcigent.tequp.info%2Fteam%2F" />
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://excigent.tequp.info/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fexcigent.tequp.info%2Fteam%2F&#038;format=xml" />
-<style id="wp-img-auto-sizes-contain-inline-css">
-img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
-/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
-</style>
-<style id="wp-emoji-styles-inline-css">
+<title>Leadership Team — Robert Lopez, Paul Weintraub, John Centofanti | Excigent Tech Partners</title>
+<meta name="description" content="Meet the Excigent Tech Partners leadership team: Robert Lopez (Broadband Engineering), Paul Weintraub RCDD (Digital Infrastructure), and John Centofanti (Security Industry) — 80+ combined years of expertise." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://excigent.com/team.html" />
+<meta property="og:title" content="Leadership Team — Excigent Tech Partners" />
+<meta property="og:description" content="Three industry veterans with 80+ combined years in Broadband, ICT, and Security markets across the Americas." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://excigent.com/team.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<style>
+/* Full-page team profiles */
+.team-profile {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 5rem;
+  align-items: start;
+  padding: 6rem 0;
+  border-bottom: 1px solid rgba(0,69,105,0.08);
+}
+.team-profile:last-child { border-bottom: none; }
+.team-profile.flip { grid-template-columns: 1fr 380px; }
+.team-profile.flip .profile-photo { order: 2; }
+.team-profile.flip .profile-info  { order: 1; }
 
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-/*# sourceURL=wp-emoji-styles-inline-css */
-</style>
+.profile-photo {
+  position: sticky;
+  top: 88px;
+}
+.profile-photo-wrap {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #DCE7F2 0%, #F4F7FB 100%);
+  box-shadow: 0 24px 64px -24px rgba(0,69,105,0.30);
+}
+.profile-photo-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1), filter 0.4s ease;
+  filter: saturate(0.92);
+}
+.profile-photo-wrap:hover img { transform: scale(1.03); filter: saturate(1); }
+.profile-photo-wrap::after {
+  content: '';
+  position: absolute; inset: auto 0 0 0; height: 40%;
+  background: linear-gradient(180deg, transparent, rgba(0,69,105,0.14));
+  pointer-events: none;
+}
 
-<link rel='stylesheet' id='excigent-google-fonts-css' href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&#038;display=swap' media='all' />
-<link rel='stylesheet' id='excigent-main-css' href='/assets/css/main.css?ver=1.0.0' media='all' />
-<link rel="https://api.w.org/" href="https://excigent.tequp.info/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://excigent.tequp.info/wp-json/wp/v2/pages/41" />
-<meta name="generator" content="WordPress 7.0" />
-<link rel="canonical" href="https://excigent.tequp.info/team/" />
-<link rel='shortlink' href='https://excigent.tequp.info/?p=41' />
+.profile-info { padding-top: 0.5rem; }
+.profile-info .profile-eyebrow {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.26em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.profile-info .profile-eyebrow::before { content: ''; width: 24px; height: 1.5px; background: var(--blue); }
+.profile-info h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 0.5rem; }
+.profile-creds-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.profile-cred { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); padding: 0.28rem 0.75rem; border: 1px solid rgba(0,97,179,0.22); border-radius: 20px; background: rgba(0,97,179,0.04); }
+
+.profile-bio { font-size: 1.02rem; line-height: 1.80; color: var(--muted); margin-bottom: 2rem; }
+.profile-highlights { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.4rem; }
+.profile-highlights li { display: flex; align-items: flex-start; gap: 0.85rem; font-size: 0.95rem; color: var(--navy); line-height: 1.5; }
+.profile-highlights li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 0.45rem; }
+
+.profile-stat-row { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.profile-stat-val { font-size: 2.2rem; font-weight: 200; letter-spacing: -0.04em; color: var(--navy); line-height: 1; }
+.profile-stat-val sup { font-size: 0.55em; font-weight: 400; vertical-align: super; color: var(--blue); }
+.profile-stat-lbl { font-size: 0.74rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; }
+
+@media (max-width: 980px) {
+  .team-profile, .team-profile.flip { grid-template-columns: 1fr; gap: 2.5rem; }
+  .team-profile.flip .profile-photo { order: 0; }
+  .team-profile.flip .profile-info  { order: 0; }
+  .profile-photo { position: static; }
+  .profile-photo-wrap { max-width: 340px; }
+  .profile-stat-row { gap: 1.5rem; }
+}
+</style>
 </head>
-<body class="wp-singular page-template page-template-page-team page-template-page-team-php page page-id-41 wp-theme-excigent-wp-theme page-team">
+<body>
 
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <a href="/">
-      <img src="/assets/images/logo.svg"
-           alt="Excigent" />
-    </a>
-  </div>
-
-  <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="#">About</a></li><li><a href="#">Team</a></li><li><a href="#">Services</a></li><li><a href="#">News &amp; Events</a></li><li><a href="#">Contact</a></li></ul>
+  <div class="nav-logo"><a href="/"><img src="/assets/images/logo.svg" alt="Excigent Tech Partners" /></a></div>
+    <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/media">Media / Press</a></li>
+    <li><a href="/contact">Connect With Us</a></li>
+  </ul>
   <div class="nav-right">
-    <span class="nav-phone">
-      +1 (800) 000-0000    </span>
-    <a href="#" class="nav-cta">Connect With Us</a>
-    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <span class="nav-phone">+1 (800) 000-0000</span>
+        <a href="/contact" class="nav-cta">Connect With Us</a>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
 
 <!-- PAGE HERO -->
 <header class="page-hero">
   <div class="page-hero-inner">
-    <span class="eyebrow"><span class="eyebrow-dot"></span>Our Leadership</span>
-    <h1>Leadership with <strong>decades</strong><br />of industry depth and credibility.</h1>
-    <p>Three industry veterans bringing 80+ combined years across broadband engineering, digital infrastructure, and security — with the relationships that move markets.</p>
+    <span class="eyebrow">Leadership Team</span>
+    <h1>Three industry veterans.<br><strong>One shared vision</strong>.</h1>
+    <p>80+ combined years across broadband engineering, digital infrastructure, and security — with the relationships that move markets across the Americas.</p>
   </div>
 </header>
 
-<!-- TEAM GRID -->
-<section class="section tint" id="leadership">
+<!-- TEAM PROFILES -->
+<section class="section light">
   <div class="section-inner">
-    <span class="section-eyebrow reveal" style="--d:0s">The Excigent Team</span>
-    <h2 class="section-title reveal" style="--d:0.06s">Three principals. One <strong>unified team</strong>.</h2>
-    <p class="section-lead reveal" style="--d:0.12s">Each brings 20–30+ years of deep domain expertise across their respective markets — and together, they provide principals with commercial leadership that spans broadband, ICT, and security.</p>
 
-    <div class="team-grid">
-            <div class="team-card reveal" style="--d:0.05s">
-        <div class="team-photo">
-                      <img src="https://excigent.tequp.info/wp-content/uploads/2026/05/robert-lopez.png" alt="Robert Lopez" />
-                  </div>
-        <div class="team-body">
-          <h3>Robert Lopez</h3>
-          <div class="team-creds">Broadband Engineering &amp; Design</div>          <p class="team-bio">Broadband engineering and design leader with 20+ years of experience supporting major network deployments and delivering construction-ready infrastructure solutions.</p>        </div>
+    <!-- Robert Lopez -->
+    <div class="team-profile reveal">
+      <div class="profile-photo">
+        <div class="profile-photo-wrap">
+          <img src="/assets/team/Robert Lopez.png" alt="Robert Lopez" />
+        </div>
       </div>
-            <div class="team-card reveal" style="--d:0.15s">
-        <div class="team-photo">
-                      <img src="https://excigent.tequp.info/wp-content/uploads/2026/05/paul-weintraub.png" alt="Paul Weintraub" />
-                  </div>
-        <div class="team-body">
-          <h3>Paul Weintraub</h3>
-          <div class="team-creds">RCDD · RTPM · ESS · TECH</div>          <p class="team-bio">Digital infrastructure leader with 30+ years of experience across broadband, ICT, data center, security, and communications markets.</p>        </div>
-      </div>
-            <div class="team-card reveal" style="--d:0.25s">
-        <div class="team-photo">
-                      <img src="https://excigent.tequp.info/wp-content/uploads/2026/05/john-centofanti.png" alt="John Centofanti" />
-                  </div>
-        <div class="team-body">
-          <h3>John Centofanti</h3>
-          <div class="team-creds">Security Industry Leadership</div>          <p class="team-bio">Security industry leader with 30+ years of experience in sales, business development, and program leadership across commercial and public-sector markets.</p>        </div>
-      </div>
-          </div>
-  </div>
-</section>
-
-<!-- STATS BAND -->
-<section class="section dark">
-  <div class="section-inner">
-    <span class="section-eyebrow reveal" style="--d:0s">By the Numbers</span>
-    <h2 class="section-title reveal" style="--d:0.06s">80+ combined years.<br /><strong>One focused team</strong>.</h2>
-    <div class="about-stats" style="margin-top:3rem;">
-            <div class="stat reveal" style="--d:0s">
-        <div class="stat-num">
-          <span>80</span>
-          <span class="suffix">+</span>        </div>
-        <div class="stat-label">Years Combined Experience</div>
-      </div>
-            <div class="stat reveal" style="--d:0.08s">
-        <div class="stat-num">
-          <span>3</span>
-                  </div>
-        <div class="stat-label">Core Technology Markets</div>
-      </div>
-            <div class="stat reveal" style="--d:0.16s">
-        <div class="stat-num">
-          <span>3</span>
-                  </div>
-        <div class="stat-label">Geographic Regions</div>
-      </div>
-            <div class="stat reveal" style="--d:0.24s">
-        <div class="stat-num">
-          <span>100</span>
-          <span class="suffix">+</span>        </div>
-        <div class="stat-label">Partner Relationships</div>
-      </div>
-          </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<section class="subscribe">
-  <div class="subscribe-inner">
-    <h2 class="reveal">Work with a team that knows <strong>your market</strong>.</h2>
-    <p class="reveal" style="--d:0.08s">Whether you're a principal looking for commercial representation or a channel partner exploring new opportunities — let's start a conversation.</p>
-
-          <div class="page-hero-actions reveal" style="--d:0.16s; justify-content:center; margin-top:0;">
-                  <a href="https://excigent.tequp.info/contact/" class="btn-fill">Get in Touch</a>
-                  <a href="https://excigent.tequp.info/services/" class="btn-ghost" style="border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.85)">Our Services</a>
-              </div>
-
-    
-  </div>
-</section>
-
-<script>
-function excigentSubscribeSubmit(form) {
-  var btn = form.querySelector('button');
-  if (btn) { btn.textContent = 'Subscribed ✓'; btn.style.background = '#0061B3'; btn.style.color = '#fff'; }
-  return false;
-}
-</script>
-
-
-<footer>
-  <div class="footer-inner">
-
-    <!-- Brand column -->
-    <div class="footer-brand">
-      <img src="/assets/images/logo.svg" alt="Excigent" />
-      <p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p>
-      <div class="footer-contact">
-        <a href="mailto:hello@excigent.com">hello@excigent.com</a>
-        <a href="tel:+18000000000">+1 (800) 000-0000</a>
+      <div class="profile-info">
+        <p class="profile-eyebrow">Founding Partner</p>
+        <h2>Robert Lopez</h2>
+        <div class="profile-creds-row">
+          <span class="profile-cred">Broadband Engineering</span>
+          <span class="profile-cred">Network Design</span>
+          <span class="profile-cred">OSP Infrastructure</span>
+        </div>
+        <p class="profile-bio">Robert Lopez is a broadband engineering and design leader with over 20 years of experience supporting major network deployments and delivering construction-ready infrastructure solutions across North America and Latin America. He brings deep technical expertise in fiber infrastructure, OSP network design, FTTH architectures, and wireless broadband systems.</p>
+        <p class="profile-bio">Throughout his career, Robert has worked with leading ISPs, municipalities, and private network operators to design and deploy next-generation broadband infrastructure. His ability to translate complex technical requirements into commercially viable, construction-ready solutions makes him a uniquely valuable commercial partner for broadband-focused principals.</p>
+        <ul class="profile-highlights">
+          <li>20+ years in broadband engineering and network design</li>
+          <li>Deep expertise in fiber, FTTH/FTTx, and OSP infrastructure</li>
+          <li>Extensive ISP and network operator relationships across the Americas</li>
+          <li>Construction-ready design and specification experience</li>
+        </ul>
+        <div class="profile-stat-row">
+          <div><div class="profile-stat-val">20<sup>+</sup></div><div class="profile-stat-lbl">Years Experience</div></div>
+          <div><div class="profile-stat-val">3</div><div class="profile-stat-lbl">Regions Covered</div></div>
+        </div>
       </div>
     </div>
 
-    <!-- Company -->
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Why Us</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>    </div>
+    <!-- Paul Weintraub -->
+    <div class="team-profile flip reveal" style="--d:0.05s">
+      <div class="profile-photo">
+        <div class="profile-photo-wrap">
+          <img src="/assets/team/Paul Weintraub.png" alt="Paul Weintraub" />
+        </div>
+      </div>
+      <div class="profile-info">
+        <p class="profile-eyebrow">Founding Partner</p>
+        <h2>Paul Weintraub</h2>
+        <div class="profile-creds-row">
+          <span class="profile-cred">RCDD</span>
+          <span class="profile-cred">RTPM</span>
+          <span class="profile-cred">ESS</span>
+          <span class="profile-cred">TECH</span>
+        </div>
+        <p class="profile-bio">Paul Weintraub is a digital infrastructure leader with over 30 years of experience spanning broadband, ICT, data center, security, and communications markets. Holding credentials including RCDD (Registered Communications Distribution Designer), RTPM, ESS, and TECH, Paul brings a rare combination of technical depth and commercial acumen to every principal relationship.</p>
+        <p class="profile-bio">Paul's career has spanned product development, channel strategy, and enterprise sales across major infrastructure manufacturers and commercial agencies. His network of distributor, integrator, and end-user relationships across North America, Latin America, and the Caribbean gives principals an immediate commercial foothold in markets that would otherwise take years to penetrate independently.</p>
+        <ul class="profile-highlights">
+          <li>30+ years across broadband, ICT, data center &amp; security markets</li>
+          <li>Holds RCDD, RTPM, ESS, and TECH industry credentials</li>
+          <li>Deep distributor, integrator, and end-user network across the Americas</li>
+          <li>Extensive channel development and product commercialization experience</li>
+        </ul>
+        <div class="profile-stat-row">
+          <div><div class="profile-stat-val">30<sup>+</sup></div><div class="profile-stat-lbl">Years Experience</div></div>
+          <div><div class="profile-stat-val">4</div><div class="profile-stat-lbl">Technology Markets</div></div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Markets -->
-    <div class="footer-col">
-      <h4>Markets</h4>
-      <ul>
-                <li><a href="#">Broadband</a></li>
-                <li><a href="#">ICT</a></li>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Our Regions</a></li>
-              </ul>    </div>
+    <!-- John Centofanti -->
+    <div class="team-profile reveal" style="--d:0.1s">
+      <div class="profile-photo">
+        <div class="profile-photo-wrap">
+          <img src="/assets/team/John Centofanti.png" alt="John Centofanti" />
+        </div>
+      </div>
+      <div class="profile-info">
+        <p class="profile-eyebrow">Founding Partner</p>
+        <h2>John Centofanti</h2>
+        <div class="profile-creds-row">
+          <span class="profile-cred">Security Leadership</span>
+          <span class="profile-cred">Business Development</span>
+          <span class="profile-cred">Program Management</span>
+        </div>
+        <p class="profile-bio">John Centofanti is a security industry leader with over 30 years of experience in sales, business development, and program leadership across commercial and public-sector markets. He has built and led high-performance sales organizations, managed complex multi-year programs, and established deep relationships with security integrators, distributors, and end-user communities across North America and the Caribbean.</p>
+        <p class="profile-bio">John's expertise spans access control, video surveillance, biometrics, intrusion systems, and integrated security platforms. He brings a strategic commercial perspective that bridges the technical and business sides of security — helping principals navigate complex procurement environments and build sustainable channel programs that deliver measurable revenue growth.</p>
+        <ul class="profile-highlights">
+          <li>30+ years in security sales, BD, and program leadership</li>
+          <li>Commercial and public-sector market expertise</li>
+          <li>Extensive integrator and distributor relationships across North America &amp; Caribbean</li>
+          <li>Deep expertise across access, video, biometrics, and intrusion markets</li>
+        </ul>
+        <div class="profile-stat-row">
+          <div><div class="profile-stat-val">30<sup>+</sup></div><div class="profile-stat-lbl">Years Experience</div></div>
+          <div><div class="profile-stat-val">2</div><div class="profile-stat-lbl">Sectors Served</div></div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Services -->
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-                <li><a href="#">Channel Development</a></li>
-                <li><a href="#">Market Positioning</a></li>
-                <li><a href="#">Marketing &amp; Visibility</a></li>
-                <li><a href="#">Our Process</a></li>
-              </ul>    </div>
+  </div>
+</section>
 
-  </div><!-- .footer-inner -->
+<!-- CTA -->
+<section class="subscribe">
+  <div class="subscribe-inner">
+    <h2 class="reveal">Work with a team that <strong>knows your market</strong>.</h2>
+    <p class="reveal" style="--d:0.08s">Reach out to learn how Excigent can help accelerate your commercial growth across the Americas.</p>
+    <div class="page-hero-actions" style="justify-content:center; margin-top:0;">
+      <a href="/contact" class="btn-fill" style="background:#fff;color:#004569;">Contact the Team</a>
+    </div>
+  </div>
+</section>
 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><img src="/assets/images/logo.svg" alt="Excigent Tech Partners" /><p>A commercial agency and market development partner helping innovative companies build channels, strengthen market presence, and accelerate sustainable revenue growth.</p><div class="footer-contact"><a href="mailto:hello@excigent.com">hello@excigent.com</a><a href="tel:+18000000000">+1 (800) 000-0000</a></div></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/team">Team</a></li><li><a href="/about#why">Why Us</a></li><li><a href="/contact">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Markets</h4><ul><li><a href="/expertise#broadband">Broadband</a></li><li><a href="/expertise#ict">ICT</a></li><li><a href="/expertise#security">Security</a></li><li><a href="/about#network">Our Regions</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="/services#channel">Channel Development</a></li><li><a href="/services#positioning">Market Positioning</a></li><li><a href="/services#marketing">Marketing &amp; Visibility</a></li><li><a href="/services#process">Our Process</a></li></ul></div>
+  </div>
   <div class="footer-bottom">
-    <span>© 2026 Excigent. All rights reserved.</span>
+    <span>© 2026 Excigent Tech Partners. All rights reserved.</span>
     <div class="footer-social">
-      <a href="#" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.49 6S0 4.881 0 3.5 1.11 1 2.49 1s2.49 1.119 2.49 2.5zM.22 8h4.54v14H.22V8zm7.61 0h4.35v1.91h.06c.61-1.15 2.09-2.36 4.31-2.36 4.61 0 5.46 3.03 5.46 6.97V22h-4.54v-6.95c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.81-2.66 3.67V22H7.83V8z"/></svg>
-      </a>
-      <a href="#" aria-label="X (Twitter)">
-        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="#" aria-label="YouTube">
-        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.49 6S0 4.881 0 3.5 1.11 1 2.49 1s2.49 1.119 2.49 2.5zM.22 8h4.54v14H.22V8zm7.61 0h4.35v1.91h.06c.61-1.15 2.09-2.36 4.31-2.36 4.61 0 5.46 3.03 5.46 6.97V22h-4.54v-6.95c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.81-2.66 3.67V22H7.83V8z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
     </div>
   </div>
 </footer>
 
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/excigent-wp-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
-<script id="excigent-main-js" src="/assets/js/main.js?ver=1.0.0"></script>
-<script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://excigent.tequp.info/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
-</script>
-<script type="module">
-/*! This file is auto-generated */
-const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=https://excigent.tequp.info/wp-includes/js/wp-emoji-loader.min.js
-</script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

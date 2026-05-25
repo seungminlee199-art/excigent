@@ -1,0 +1,19 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about",       "destination": "/about/index.html" },
+    { "source": "/services",    "destination": "/services/index.html" },
+    { "source": "/team",        "destination": "/team/index.html" },
+    { "source": "/contact",     "destination": "/contact/index.html" },
+    { "source": "/news-events", "destination": "/news-events/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

@@ -33,10 +33,10 @@ $copy_year   = date( 'Y' );
           'depth'          => 1,
           'fallback_cb'    => function() {
               echo '<ul>
-                <li><a href="' . esc_url( home_url( '/about/' ) ) . '">About</a></li>
-                <li><a href="' . esc_url( home_url( '/team/' ) ) . '">Team</a></li>
-                <li><a href="' . esc_url( home_url( '/about/#why' ) ) . '">Why Us</a></li>
-                <li><a href="' . esc_url( home_url( '/contact/' ) ) . '">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Why Us</a></li>
+                <li><a href="#">Contact</a></li>
               </ul>';
           },
       ] ); ?>
@@ -52,10 +52,10 @@ $copy_year   = date( 'Y' );
           'depth'          => 1,
           'fallback_cb'    => function() {
               echo '<ul>
-                <li><a href="' . esc_url( home_url( '/services/#channel' ) ) . '">Broadband</a></li>
-                <li><a href="' . esc_url( home_url( '/services/#positioning' ) ) . '">ICT</a></li>
-                <li><a href="' . esc_url( home_url( '/services/#marketing' ) ) . '">Security</a></li>
-                <li><a href="' . esc_url( home_url( '/about/#network' ) ) . '">Our Regions</a></li>
+                <li><a href="#">Broadband</a></li>
+                <li><a href="#">ICT</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">Our Regions</a></li>
               </ul>';
           },
       ] ); ?>
@@ -71,10 +71,10 @@ $copy_year   = date( 'Y' );
           'depth'          => 1,
           'fallback_cb'    => function() {
               echo '<ul>
-                <li><a href="' . esc_url( home_url( '/services/#channel' ) ) . '">Channel Development</a></li>
-                <li><a href="' . esc_url( home_url( '/services/#positioning' ) ) . '">Market Positioning</a></li>
-                <li><a href="' . esc_url( home_url( '/services/#marketing' ) ) . '">Marketing &amp; Visibility</a></li>
-                <li><a href="' . esc_url( home_url( '/services/#process' ) ) . '">Our Process</a></li>
+                <li><a href="#">Channel Development</a></li>
+                <li><a href="#">Market Positioning</a></li>
+                <li><a href="#">Marketing &amp; Visibility</a></li>
+                <li><a href="#">Our Process</a></li>
               </ul>';
           },
       ] ); ?>

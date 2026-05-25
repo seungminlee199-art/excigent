@@ -30,8 +30,7 @@
     <span class="nav-phone">
       <?php echo esc_html( get_theme_mod( 'excigent_phone', '+1 (800) 000-0000' ) ); ?>
     </span>
-    <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ?: home_url( '/contact/' ) ); ?>"
-       class="nav-cta">Connect With Us</a>
+    <a href="#" class="nav-cta">Connect With Us</a>
     <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>

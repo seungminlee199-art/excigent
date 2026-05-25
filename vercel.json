@@ -1,7 +1,18 @@
 {
+  "buildCommand": "",
+  "installCommand": "",
   "outputDirectory": "site",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about",       "destination": "/about/index.html" },
+    { "source": "/services",    "destination": "/services/index.html" },
+    { "source": "/team",        "destination": "/team/index.html" },
+    { "source": "/contact",     "destination": "/contact/index.html" },
+    { "source": "/news-events", "destination": "/news-events/index.html" },
+    { "source": "/expertise",   "destination": "/expertise/index.html" },
+    { "source": "/media",       "destination": "/media/index.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
